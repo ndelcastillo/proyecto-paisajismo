@@ -1,0 +1,2048 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curso de Diseño de Jardines — Guía de Estudio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Expanded:wght@600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Barra de progreso tipo "escala gráfica" -->
+  <div class="scale-progress" aria-hidden="true">
+    <div class="scale-progress__fill" id="scaleFill"></div>
+  </div>
+
+  <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="sidebar">
+    <span></span><span></span><span></span>
+    <span class="nav-toggle__label">Índice</span>
+  </button>
+
+  <div class="sheet">
+
+    <!-- SIDEBAR: sello / cajetín de plano técnico -->
+    <aside class="sidebar" id="sidebar">
+      <div class="stamp">
+        <p class="stamp__eyebrow">Educación a Distancia — Círculo Agrónomos de Bs. As.</p>
+        <h1 class="stamp__title">Curso de<br>Diseño de<br>Jardines</h1>
+
+        <dl class="stamp__meta">
+          <div><dt>Expediente</dt><dd id="activeModuleLabel">Módulo I</dd></div>
+          <div><dt>Docente</dt><dd>Elena Soboleff</dd></div>
+          <div><dt>Alumno</dt><dd>Nicolás</dd></div>
+          <div><dt>Escala</dt><dd>1 : resumen</dd></div>
+        </dl>
+      </div>
+
+      <!-- Selector de módulo — como pestañas de un legajo de láminas -->
+      <div class="module-switch" role="tablist" aria-label="Selección de módulo">
+        <button type="button" class="module-switch__btn is-active" data-module-btn="1" role="tab" aria-selected="true">Mód. I</button>
+        <button type="button" class="module-switch__btn" data-module-btn="2" role="tab" aria-selected="false">Mód. II</button>
+        <button type="button" class="module-switch__btn" data-module-btn="3" role="tab" aria-selected="false">Mód. III</button>
+        <button type="button" class="module-switch__btn" data-module-btn="4" role="tab" aria-selected="false">Mód. IV</button>
+        <button type="button" class="module-switch__btn" data-module-btn="5" role="tab" aria-selected="false">Mód. V</button>
+        <button type="button" class="module-switch__btn" data-module-btn="6" role="tab" aria-selected="false">Mód. VI</button>
+        <button type="button" class="module-switch__btn" data-module-btn="7" role="tab" aria-selected="false">Mód. VII</button>
+        <button type="button" class="module-switch__btn" data-module-btn="8" role="tab" aria-selected="false">Mód. VIII</button>
+      </div>
+
+      <nav class="index" aria-label="Índice de láminas">
+        <p class="index__label">Índice</p>
+
+        <div class="index__group" data-index-group="1">
+          <p class="index__module-heading">Módulo I — Conceptos iniciales</p>
+          <ol class="index__list" data-module-index="1">
+            <li><a href="#s01" data-nav="s01"><span class="index__num">01</span><span>Qué es el paisajismo</span></a></li>
+            <li><a href="#s02" data-nav="s02"><span class="index__num">02</span><span>Funciones: colectivas / privadas</span></a></li>
+            <li><a href="#s03" data-nav="s03"><span class="index__num">03</span><span>Calidades del paisajismo</span></a></li>
+            <li><a href="#s04" data-nav="s04"><span class="index__num">04</span><span>Etapas del proyecto</span></a></li>
+          </ol>
+        </div>
+
+        <div class="index__group" data-index-group="2">
+          <p class="index__module-heading">Módulo II — Relevamiento y diseño técnico</p>
+          <ol class="index__list" data-module-index="2">
+            <li><a href="#s05" data-nav="s05"><span class="index__num">01</span><span>Relevamiento: dos etapas</span></a></li>
+            <li><a href="#s06" data-nav="s06"><span class="index__num">02</span><span>Qué relevar del terreno</span></a></li>
+            <li><a href="#s07" data-nav="s07"><span class="index__num">03</span><span>Documentar: fotos y medidas</span></a></li>
+            <li><a href="#s08" data-nav="s08"><span class="index__num">04</span><span>El entorno y el paisaje vecino</span></a></li>
+            <li><a href="#s09" data-nav="s09"><span class="index__num">05</span><span>Bases del diseño técnico: la escala</span></a></li>
+            <li><a href="#s10" data-nav="s10"><span class="index__num">06</span><span>Herramientas y lectura de planos</span></a></li>
+          </ol>
+        </div>
+
+        <div class="index__group" data-index-group="3">
+          <p class="index__module-heading">Módulo III — El espacio y sus usuarios</p>
+          <ol class="index__list" data-module-index="3">
+            <li><a href="#s11" data-nav="s11"><span class="index__num">01</span><span>Dos etapas para diseñar</span></a></li>
+            <li><a href="#s12" data-nav="s12"><span class="index__num">02</span><span>Observación: fortalezas y debilidades</span></a></li>
+            <li><a href="#s13" data-nav="s13"><span class="index__num">03</span><span>Seis limitaciones del proyecto</span></a></li>
+            <li><a href="#s14" data-nav="s14"><span class="index__num">04</span><span>Asoleamiento y sombras</span></a></li>
+            <li><a href="#s15" data-nav="s15"><span class="index__num">05</span><span>Clima, topografía y límites</span></a></li>
+            <li><a href="#s16" data-nav="s16"><span class="index__num">06</span><span>El suelo: texturas y pH</span></a></li>
+            <li><a href="#s17" data-nav="s17"><span class="index__num">07</span><span>La entrevista y el mantenimiento</span></a></li>
+          </ol>
+        </div>
+
+        <div class="index__group" data-index-group="4">
+          <p class="index__module-heading">Módulo IV — Preparación del proceso creativo</p>
+          <ol class="index__list" data-module-index="4">
+            <li><a href="#s18" data-nav="s18"><span class="index__num">01</span><span>Orden: circulación y zonificación</span></a></li>
+            <li><a href="#s19" data-nav="s19"><span class="index__num">02</span><span>Figura y fondo</span></a></li>
+            <li><a href="#s20" data-nav="s20"><span class="index__num">03</span><span>Puntos focales</span></a></li>
+            <li><a href="#s21" data-nav="s21"><span class="index__num">04</span><span>Formas y tramas</span></a></li>
+            <li><a href="#s22" data-nav="s22"><span class="index__num">05</span><span>Equilibrio y escala humana</span></a></li>
+            <li><a href="#s23" data-nav="s23"><span class="index__num">06</span><span>Repetición e interés todo el año</span></a></li>
+            <li><a href="#s24" data-nav="s24"><span class="index__num">07</span><span>Texturas</span></a></li>
+            <li><a href="#s25" data-nav="s25"><span class="index__num">08</span><span>Color y composición cromática</span></a></li>
+          </ol>
+        </div>
+
+        <div class="index__group" data-index-group="5">
+          <p class="index__module-heading">Módulo V — El diseño y su presentación</p>
+          <ol class="index__list" data-module-index="5">
+            <li><a href="#s26" data-nav="s26"><span class="index__num">01</span><span>El diseño: llenos y vacíos</span></a></li>
+            <li><a href="#s27" data-nav="s27"><span class="index__num">02</span><span>Geométrico vs. orgánico</span></a></li>
+            <li><a href="#s28" data-nav="s28"><span class="index__num">03</span><span>Los cinco sentidos en el jardín</span></a></li>
+            <li><a href="#s29" data-nav="s29"><span class="index__num">04</span><span>Materiales extra-vegetales</span></a></li>
+            <li><a href="#s30" data-nav="s30"><span class="index__num">05</span><span>Los grupos de plantas</span></a></li>
+            <li><a href="#s31" data-nav="s31"><span class="index__num">06</span><span>Nativas vs. exóticas</span></a></li>
+            <li><a href="#s32" data-nav="s32"><span class="index__num">07</span><span>Fichas de especies</span></a></li>
+            <li><a href="#s33" data-nav="s33"><span class="index__num">08</span><span>Presentar el proyecto</span></a></li>
+            <li><a href="#s34" data-nav="s34"><span class="index__num">09</span><span>Leer un plano y listados</span></a></li>
+          </ol>
+        </div>
+
+        <div class="index__group" data-index-group="6">
+          <p class="index__module-heading">Módulo VI — Representación gráfica</p>
+          <ol class="index__list" data-module-index="6">
+            <li><a href="#s35" data-nav="s35"><span class="index__num">01</span><span>Transmitir una idea, no ser realista</span></a></li>
+            <li><a href="#s36" data-nav="s36"><span class="index__num">02</span><span>Plano de presentación</span></a></li>
+            <li><a href="#s37" data-nav="s37"><span class="index__num">03</span><span>Plano de plantación</span></a></li>
+            <li><a href="#s38" data-nav="s38"><span class="index__num">04</span><span>Grafismos de los recursos vegetales</span></a></li>
+            <li><a href="#s39" data-nav="s39"><span class="index__num">05</span><span>Caducas, perennes y coníferas</span></a></li>
+            <li><a href="#s40" data-nav="s40"><span class="index__num">06</span><span>Simbología de equipamientos</span></a></li>
+            <li><a href="#s41" data-nav="s41"><span class="index__num">07</span><span>Color y escala de grises</span></a></li>
+          </ol>
+        </div>
+
+        <div class="index__group" data-index-group="7">
+          <p class="index__module-heading">Módulo VII — Costos y presupuestos</p>
+          <ol class="index__list" data-module-index="7">
+            <li><a href="#s42" data-nav="s42"><span class="index__num">01</span><span>¿Cuánto cuesta un jardín?</span></a></li>
+            <li><a href="#s43" data-nav="s43"><span class="index__num">02</span><span>Los costos ocultos</span></a></li>
+            <li><a href="#s44" data-nav="s44"><span class="index__num">03</span><span>Margen de seguridad y ganancia</span></a></li>
+            <li><a href="#s45" data-nav="s45"><span class="index__num">04</span><span>Honorarios: cobrar el diseño</span></a></li>
+            <li><a href="#s46" data-nav="s46"><span class="index__num">05</span><span>Estimar sin proyecto: categorías</span></a></li>
+            <li><a href="#s47" data-nav="s47"><span class="index__num">06</span><span>Contar circulitos: el plano</span></a></li>
+            <li><a href="#s48" data-nav="s48"><span class="index__num">07</span><span>Las tres tablas de cotización</span></a></li>
+            <li><a href="#s49" data-nav="s49"><span class="index__num">08</span><span>Terceros, mano de obra y herramientas</span></a></li>
+          </ol>
+        </div>
+
+        <div class="index__group" data-index-group="8">
+          <p class="index__module-heading">Módulo VIII — Ejecución, entrega y mantenimiento</p>
+          <ol class="index__list" data-module-index="8">
+            <li><a href="#s50" data-nav="s50"><span class="index__num">01</span><span>Cuándo empezar: el jardín va último</span></a></li>
+            <li><a href="#s51" data-nav="s51"><span class="index__num">02</span><span>Las 13 etapas de ejecución</span></a></li>
+            <li><a href="#s52" data-nav="s52"><span class="index__num">03</span><span>Riego</span></a></li>
+            <li><a href="#s53" data-nav="s53"><span class="index__num">04</span><span>Iluminación</span></a></li>
+            <li><a href="#s54" data-nav="s54"><span class="index__num">05</span><span>Orden de plantación</span></a></li>
+            <li><a href="#s55" data-nav="s55"><span class="index__num">06</span><span>Cronogramas de obra</span></a></li>
+            <li><a href="#s56" data-nav="s56"><span class="index__num">07</span><span>Pozos, zanjas y rellenado</span></a></li>
+            <li><a href="#s57" data-nav="s57"><span class="index__num">08</span><span>Tutoramiento</span></a></li>
+            <li><a href="#s58" data-nav="s58"><span class="index__num">09</span><span>Césped y riego inicial</span></a></li>
+            <li><a href="#s59" data-nav="s59"><span class="index__num">10</span><span>Esquemas de plantación</span></a></li>
+            <li><a href="#s60" data-nav="s60"><span class="index__num">11</span><span>Entrega y mantenimiento</span></a></li>
+          </ol>
+        </div>
+      </nav>
+
+      <!-- Norte / escala gráfica — firma visual del proyecto -->
+      <div class="compass" aria-hidden="true">
+        <svg viewBox="0 0 120 140" width="72" height="84">
+          <line x1="60" y1="10" x2="60" y2="100" stroke="var(--ink)" stroke-width="1.4"/>
+          <polygon points="60,4 52,26 68,26" fill="var(--ink)"/>
+          <text x="60" y="118" text-anchor="middle" class="compass__n">N</text>
+        </svg>
+        <div class="scale-bar">
+          <span></span><span></span><span></span><span></span>
+          <p>0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4 m</p>
+        </div>
+      </div>
+    </aside>
+
+    <!-- CONTENIDO -->
+    <main class="content">
+
+      <div class="module-content" data-module-content="1">
+
+      <header class="content__intro">
+        <p class="content__kicker">Guía de estudio · Módulo I</p>
+        <h2 class="content__title">Conceptos iniciales del paisajismo</h2>
+        <p class="content__lede">Los cuatro bloques que sientan la base conceptual de todo el curso: qué entendemos por paisajismo, qué funciones cumple, qué calidades debe reunir, y cómo se organiza un proyecto de principio a fin.</p>
+      </header>
+
+      <!-- LÁMINA 01 -->
+      <section class="lamina" id="s01" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 01 / 04</span>
+          <h3>Qué es el paisajismo</h3>
+        </div>
+
+        <p>Antes de definir <strong>paisajismo</strong> hay que entender qué es un <strong>paisaje</strong>: un espacio de terreno que se abarca de un vistazo, o su representación (una pintura, un dibujo). Un paisaje puede ser urbano, rural, natural o modificado — no tiene que ser necesariamente lindo. Un descampado también es un paisaje.</p>
+
+        <p>Con esa base, la definición de trabajo del curso es: el paisajismo es el arte de recrear la vegetación en los espacios de convivencia de la sociedad, reacercando al hombre de su elemento de origen: la Naturaleza.</p>
+
+        <p>Antiguamente se pensaba que el paisajismo era solamente usar plantas como adorno. Hoy la profesión combina criterios técnicos (suelo, clima, distancias de plantación) con conceptos artísticos. <strong>Plantas no es igual a paisajismo</strong>: los recursos vegetales son la parte más vistosa, pero necesitan de los <strong>recursos arquitectónicos</strong> (caminos, solados, pérgolas, fuentes) y de los <strong>recursos técnicos</strong> (distancias de plantación, tutoramiento, tamaño adulto de la planta, clima, tipo de suelo, asoleamiento).</p>
+
+        <blockquote class="note-card">
+          <p>«El jardín tiene vida: nace, crece, puede estar sano o enfermo, sus partes mueren y se renuevan. Si queremos perfección, busquemos un escenario, no un jardín.»</p>
+        </blockquote>
+
+        <figure class="plate">
+          <img src="img/residencial-paisajismo.jpg" alt="Jardín residencial con vegetación, camino y áreas de estar integradas" loading="lazy">
+          <figcaption><span>Fig. 00</span> Recursos vegetales, arquitectónicos y técnicos trabajando juntos</figcaption>
+        </figure>
+      </section>
+
+      <!-- LÁMINA 02 -->
+      <section class="lamina" id="s02" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 02 / 04</span>
+          <h3>Funciones del paisajismo: colectivas vs. privadas</h3>
+        </div>
+
+        <p>Distinción central del módulo:</p>
+
+        <ul class="legend">
+          <li><span class="legend__swatch legend__swatch--a" aria-hidden="true"></span><div><strong>Funciones colectivas</strong> — benefician a toda una comunidad de forma amplia (urbanismo, plazas, rutas, edificios públicos, industrias).</div></li>
+          <li><span class="legend__swatch legend__swatch--b" aria-hidden="true"></span><div><strong>Funciones privadas</strong> — dirigidas a un grupo específico de personas (oficinas, clubes, escuelas, countries, y sobre todo residencias unifamiliares).</div></li>
+        </ul>
+
+        <figure class="plate plate--pair">
+          <div class="plate__item">
+            <img src="img/comercial-bayres.jpg" alt="Fachada con vegetación e iluminación natural de un centro comercial en Buenos Aires" loading="lazy">
+            <figcaption><span>Fig. 01</span> Función colectiva — comercio (DOT Bayres Shopping)</figcaption>
+          </div>
+          <div class="plate__item">
+            <img src="img/residencial-entrada.jpg" alt="Entrada sombreada de una casa con paisajismo residencial" loading="lazy">
+            <figcaption><span>Fig. 02</span> Función privada — jardín residencial</figcaption>
+          </div>
+        </figure>
+
+        <p>El curso se enfoca en las funciones privadas, específicamente en <strong>jardines residenciales</strong> — el tipo de proyecto en el que estás trabajando ahora.</p>
+
+        <p>Dentro de lo residencial, el diseño debe resolver:</p>
+
+        <ul class="checklist">
+          <li>Necesidad de sombra</li>
+          <li>Necesidad de sol e iluminación</li>
+          <li>Confort térmico</li>
+          <li>Barreras (visuales, de polvo, de viento, sonoras)</li>
+          <li>Áreas diferenciadas de estar, juego y funcionales</li>
+        </ul>
+
+        <div class="note-card note-card--field">
+          <p><strong>Nota de campo:</strong> estas funciones ya están presentes en tu proyecto actual: el área de descanso, el chulengo y el camino hacia la casa son respuestas concretas a estas funciones privadas.</p>
+        </div>
+      </section>
+
+      <!-- LÁMINA 03 -->
+      <section class="lamina" id="s03" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 03 / 04</span>
+          <h3>Calidades del paisajismo</h3>
+        </div>
+
+        <p>Seis atributos que debería tener un paisajismo bien resuelto:</p>
+
+        <div class="quality-grid">
+          <article class="quality-card">
+            <p class="quality-card__label">Preservativas</p>
+            <p>Uso de especies nativas para sostener la fauna local (aves, mariposas, polinizadores).</p>
+          </article>
+          <article class="quality-card">
+            <p class="quality-card__label">Atenuantes</p>
+            <p>La vegetación baja temperaturas, reduce ruido, frena viento y polvo, ahorra energía de climatización.</p>
+          </article>
+          <article class="quality-card">
+            <p class="quality-card__label">Decorativas</p>
+            <p>La más conocida, pero debe ir siempre subordinada a las demás — sin ellas, se pierde la función real de mejorar la calidad de vida.</p>
+          </article>
+          <article class="quality-card">
+            <p class="quality-card__label">Estructurales</p>
+            <p>La vegetación organiza el espacio: cercos vivos, macizos (grupos densos de una misma especie), contención de taludes.</p>
+          </article>
+          <article class="quality-card">
+            <p class="quality-card__label">Recreativas</p>
+            <p>Habilita el uso del espacio para ocio y descanso.</p>
+          </article>
+          <article class="quality-card">
+            <p class="quality-card__label">Lucrativas</p>
+            <p>La rentabilidad: plusvalía para la propiedad del cliente y rédito profesional para el paisajista.</p>
+          </article>
+        </div>
+
+        <figure class="plate">
+          <img src="img/ibirapuera.jpg" alt="Parque Ibirapuera en São Paulo, con lago, vegetación y áreas de recreación" loading="lazy">
+          <figcaption><span>Fig. 03</span> Calidades preservativas y recreativas en un espacio verde público (Parque Ibirapuera)</figcaption>
+        </figure>
+      </section>
+
+      <!-- LÁMINA 04 -->
+      <section class="lamina" id="s04" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 04 / 04</span>
+          <h3>Etapas del proyecto de paisajismo</h3>
+        </div>
+
+        <p>Es la hoja de ruta de todo proyecto — y del tuyo en particular. El módulo da la lista completa, pero este es el set <strong>mínimo indispensable</strong> que no puede faltar ni en el jardín propio:</p>
+
+        <ol class="stages">
+          <li><span>01</span>Entrevista inicial</li>
+          <li><span>02</span>Contrato</li>
+          <li><span>03</span>Plano de situación, relevamiento y croquis</li>
+          <li><span>04</span>Elaboración de planta de situación en escala</li>
+          <li><span>05</span>Aprobación de diseño</li>
+          <li><span>06</span>Presupuesto</li>
+          <li><span>07</span>Aprobación de proveedores y contratación</li>
+          <li><span>08</span>Cronograma de obra</li>
+          <li><span>09</span>Ejecución</li>
+          <li><span>10</span>Entrega y mantenimiento inicial</li>
+        </ol>
+
+        <div class="note-card note-card--field">
+          <p><strong>Dato práctico de campo:</strong> la etapa de anteproyecto → presentación → correcciones es la que más tiempo consume cuando la entrevista inicial fue floja. Cuanto mejor se releven los deseos y restricciones del cliente al principio, menos vueltas se dan después.</p>
+        </div>
+      </section>
+
+      <footer class="content__footer">
+        <p>Resumen elaborado a partir de: Curso de Diseño de Jardines, Módulo I — Conceptos Iniciales (Educación a Distancia, Círculo Agrónomos de Buenos Aires — Docente: Elena Soboleff).</p>
+      </footer>
+
+      </div>
+      <!-- FIN módulo I -->
+
+      <div class="module-content" data-module-content="2" hidden>
+
+      <header class="content__intro">
+        <p class="content__kicker">Guía de estudio · Módulo II</p>
+        <h2 class="content__title">Relevamiento y bases para el diseño técnico</h2>
+        <p class="content__lede">Antes de diseñar hay que levantar los datos del terreno con método: qué medir, qué fotografiar, cómo pasar todo eso a un plano en escala, y qué herramientas usar para dibujarlo.</p>
+      </header>
+
+      <!-- LÁMINA 01 (Módulo II) -->
+      <section class="lamina" id="s05" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 01 / 06</span>
+          <h3>Relevamiento: dos etapas</h3>
+        </div>
+
+        <p>El <strong>relevamiento</strong> es la etapa donde recopilamos toda la información necesaria del espacio antes de diseñar. El módulo distingue dos etapas, que conviene no mezclar:</p>
+
+        <ul class="legend">
+          <li><span class="legend__swatch legend__swatch--a" aria-hidden="true"></span><div><strong>Relevamiento técnico</strong> — recopilar los datos duros del terreno (medidas, orientación, desniveles). Podés hacerlo vos, con ayuda, o contratando un agrimensor en casos grandes o complejos.</div></li>
+          <li><span class="legend__swatch legend__swatch--b" aria-hidden="true"></span><div><strong>Entrevista al cliente</strong> — levantar necesidades, gustos y expectativas (se profundiza en el Módulo III).</div></li>
+        </ul>
+
+        <p>Toda la información relevada se traslada después a un <strong>plano en escala</strong> — la base sobre la que vamos a diseñar. Si no existe un plano previo, se arranca con un croquis a mano.</p>
+
+        <div class="note-card note-card--field">
+          <p><strong>Nota de campo:</strong> siempre olvidamos algo. Por eso conviene planificar bien esta etapa y documentar de más — con fotos y videos — en vez de confiar solo en la memoria.</p>
+        </div>
+      </section>
+
+      <!-- LÁMINA 02 (Módulo II) -->
+      <section class="lamina" id="s06" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 02 / 06</span>
+          <h3>Qué relevar del terreno</h3>
+        </div>
+
+        <p>El relevamiento técnico del espacio a intervenir cubre:</p>
+
+        <ul class="checklist">
+          <li>El terreno: dimensiones, medidas, desniveles, drenajes, medianeras y sus tratamientos (muros, cercos, alambrados)</li>
+          <li>Construcciones existentes: casa, piscina, quincho, garaje, depósito</li>
+          <li>Otros elementos: esculturas, troncos secos, piedras, fuentes, espejos de agua</li>
+          <li>Recursos vegetales existentes — para decidir si se mantienen, trasplantan o eliminan</li>
+          <li>Propiedades vecinas y su influencia visual y sonora</li>
+          <li>Puntos positivos y negativos, vistas a valorar, problemas a solucionar</li>
+        </ul>
+
+        <p>Un criterio importante para diseñar con responsabilidad: siempre hay que usar las <strong>medidas finales esperadas de las plantas adultas</strong>, no su tamaño al momento de plantar. Un árbol que hoy es chico va a crecer, y las reglamentaciones de distancia a medianeras (por ejemplo, 3m) aplican en función de ese tamaño adulto.</p>
+
+        <div class="note-card">
+          <p>Ejemplo del módulo: en un jardín de 4,33m de ancho no entra un árbol plantado en tierra si la normativa exige 3m de distancia a la medianera — pero sí puede ir en un macetón bien preparado.</p>
+        </div>
+      </section>
+
+      <!-- LÁMINA 03 (Módulo II) -->
+      <section class="lamina" id="s07" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 03 / 06</span>
+          <h3>Documentar: fotos, videos y medidas de referencia</h3>
+        </div>
+
+        <p>La recomendación del módulo es simple: <strong>nunca sacamos suficientes fotos</strong>. Conviene registrar, como mínimo:</p>
+
+        <ul class="checklist">
+          <li>Fotos 360° desde el centro del área y desde puntos clave (marcados en el croquis con letras, para poder ordenarlas después)</li>
+          <li>Perímetro: fachada, medianeras, fondo</li>
+          <li>Puntos fuertes (paisaje prestado) y debilidades (lo que hay que tapar)</li>
+          <li>Cerramientos, aberturas y solados, con sus medidas</li>
+          <li>Videos de recorrido, comentados en el momento — ahorran anotaciones</li>
+        </ul>
+
+        <figure class="plate">
+          <img src="img/mod2-croquis-inicial.jpg" alt="Croquis inicial a mano de un jardín, con anotaciones de medidas" loading="lazy">
+          <figcaption><span>Fig. 01</span> Croquis inicial — separar la información en más de un croquis evita confusiones</figcaption>
+        </figure>
+
+        <p>Un truco útil cuando falta una medida: usar elementos de tamaño conocido que aparecen en las fotos como referencia de escala.</p>
+
+        <div class="note-card note-card--field">
+          <p><strong>Medidas de referencia (Buenos Aires):</strong> los baldosones de vereda miden 60×40cm (también hay de 30×40cm); las baldosas tipo "vainilla" miden 20×20cm; los ladrillos comunes miden entre 23–25cm de largo por 12–13cm de ancho. Con esto se puede estimar una medida aproximada a partir de una foto — unos pocos centímetros de diferencia no arruinan el diseño con plantas, aunque sí importan si hay que encargar un mueble a medida.</p>
+        </div>
+      </section>
+
+      <!-- LÁMINA 04 (Módulo II) -->
+      <section class="lamina" id="s08" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 04 / 06</span>
+          <h3>El entorno y el paisaje vecino</h3>
+        </div>
+
+        <p>Antes de ir a relevar conviene estudiar el entorno desde el escritorio:</p>
+
+        <ul class="checklist">
+          <li>Ubicación (Google Maps satelital ayuda mucho)</li>
+          <li>Orientación del lote respecto al norte, para el futuro estudio de asoleamiento</li>
+          <li>Accesos (asfalto o tosca, público o privado — en countries puede haber restricciones para camiones que afecten el costo)</li>
+          <li>Vegetación, parques, ríos o humedales cercanos; vientos y régimen de lluvias de la zona</li>
+          <li>Edificaciones cercanas: altura, tamaño, estilo</li>
+          <li>Leyes y reglamentaciones locales</li>
+        </ul>
+
+        <p>Una vez en el sitio, hay que sumar la mirada sobre el <strong>paisaje vecino</strong>:</p>
+
+        <ul class="checklist">
+          <li>Construcciones vecinas y sus alturas, y la sombra que proyectan</li>
+          <li>Ruidos molestos (avenidas, fábricas, motores)</li>
+          <li>Privacidad desde las ventanas propias y ajenas</li>
+          <li>Plantas del vecino que se puedan incorporar visualmente al diseño</li>
+        </ul>
+
+        <div class="note-card">
+          <p>Cuando una copa de árbol, una cortina de viento o una enredadera del vecino se suma visualmente al propio jardín como si fuera parte del diseño, se habla de <strong>paisaje prestado</strong>: un recurso que agranda el espacio percibido sin ocupar terreno propio.</p>
+        </div>
+      </section>
+
+      <!-- LÁMINA 05 (Módulo II) -->
+      <section class="lamina" id="s09" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 05 / 06</span>
+          <h3>Bases del diseño técnico: la escala</h3>
+        </div>
+
+        <p>Toda la información relevada se pasa a un plano dibujado en <strong>escala</strong>: una proporción fija entre las medidas del dibujo y las medidas reales del terreno.</p>
+
+        <div class="note-card note-card--field">
+          <p><strong>Cómo leer una escala:</strong> 1:100 significa que 1 metro real se representa con 1 centímetro de dibujo (1 dividido 100 = 0,01m = 1cm). En escala 1:50, 1 metro real son 2cm de dibujo (1 dividido 50 = 0,02m). Cuanto más chico el divisor, más grande y detallado sale el plano.</p>
+        </div>
+
+        <p>La elección de escala y papel es un poco de prueba y error:</p>
+
+        <ul class="checklist">
+          <li>Para bocetar el perímetro del lote y probar si una escala funciona, se puede empezar por 1:100</li>
+          <li>Para los croquis a mano, papel cuadriculado de 0,5×0,5cm (en escala 1:100, cada 2 cuadraditos representan 1m)</li>
+          <li>Para el plano técnico final, papel blanco liso — la cuadrícula ensucia la lectura del diseño</li>
+          <li>Para dibujar en 1:100 alcanza una regla común; para otras escalas conviene un <strong>escalímetro</strong> (regla especial con varias escalas marcadas)</li>
+        </ul>
+      </section>
+
+      <!-- LÁMINA 06 (Módulo II) -->
+      <section class="lamina" id="s10" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 06 / 06</span>
+          <h3>Herramientas y lectura de planos</h3>
+        </div>
+
+        <p>El dibujo técnico se hace primero a lápiz, para poder corregir. Solo un plano ya revisado y aprobado pasa a tinta en sus líneas permanentes (perímetro, construcciones, plantas que se mantienen).</p>
+
+        <p>Elementos básicos para dibujar el plano base:</p>
+
+        <ul class="checklist">
+          <li>Papel blanco de tamaño adecuado</li>
+          <li>Escuadras y reglas</li>
+          <li>Escalímetro</li>
+          <li>Lápiz mecánico 0,5mm, dureza HB (los más blandos ensucian el papel; se reservan para sombrear)</li>
+          <li>Goma de borrar de buena calidad</li>
+        </ul>
+
+        <p>Saber leer un plano de situación ya dibujado es igual de importante que saber dibujarlo. Un plano se lee dividiéndolo en zonas — por ejemplo, entrada, construcción y jardín — identificando paredes y aberturas por su representación gráfica estándar.</p>
+
+        <figure class="plate">
+          <img src="img/mod2-plano-lectura.jpg" alt="Plano de situación de una vivienda con entrada, casa y jardín señalados" loading="lazy">
+          <figcaption><span>Fig. 02</span> Lectura de un plano de situación: entrada (derecha), casa (centro), jardín (izquierda)</figcaption>
+        </figure>
+      </section>
+
+      <footer class="content__footer">
+        <p>Resumen elaborado a partir de: Curso de Diseño de Jardines, Módulo II — Relevamiento y Bases para el Diseño Técnico (Educación a Distancia, Círculo Agrónomos de Buenos Aires — Docente: Elena Soboleff).</p>
+      </footer>
+
+      </div>
+      <!-- FIN módulo II -->
+
+      <div class="module-content" data-module-content="3" hidden>
+
+      <header class="content__intro">
+        <p class="content__kicker">Guía de estudio · Módulo III</p>
+        <h2 class="content__title">El espacio y sus usuarios</h2>
+        <p class="content__lede">Un buen diseño combina dos miradas: el estudio técnico y crítico del espacio a intervenir, y una buena comunicación con quienes van a vivir el jardín. Este módulo recorre ambas — desde el asoleamiento y el suelo hasta la entrevista con el cliente y el mantenimiento futuro.</p>
+      </header>
+
+      <!-- LÁMINA 01 (Módulo III) -->
+      <section class="lamina" id="s11" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 01 / 07</span>
+          <h3>Dos etapas para diseñar</h3>
+        </div>
+
+        <p>Diseñar un jardín de estilo japonés porque el dueño es de origen oriental puede no ser la solución que esa persona busca. La comunicación con el usuario es tan fundamental como la técnica para lograr un resultado que agrade y perdure en el tiempo.</p>
+
+        <p>Los jardines son organismos vivos: nacen, crecen, llegan a un auge y decaen. También es normal que sus usuarios los amolden con el uso, como quien ablanda un zapato lindo hasta que se hace cómodo. Por eso hay que diseñarlos de forma que permitan esas adaptaciones sin que representen cambios drásticos que desfiguren el diseño por no haber tenido en cuenta alguna necesidad o gusto.</p>
+
+        <p>Para lograrlo, el módulo propone dos etapas:</p>
+
+        <ul class="legend">
+          <li><span class="legend__swatch legend__swatch--a" aria-hidden="true"></span><div><strong>Estudiar críticamente el espacio</strong> a intervenir desde una mirada técnica.</div></li>
+          <li><span class="legend__swatch legend__swatch--b" aria-hidden="true"></span><div><strong>Establecer una buena comunicación</strong> con quienes utilizarán el jardín, levantando sus necesidades y preferencias.</div></li>
+        </ul>
+
+        <div class="note-card note-card--field">
+          <p><strong>Nota de campo:</strong> debemos ser observadores y saber preguntar — las dos habilidades que sostienen todo este módulo.</p>
+        </div>
+      </section>
+
+      <!-- LÁMINA 02 (Módulo III) -->
+      <section class="lamina" id="s12" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 02 / 07</span>
+          <h3>Observación: fortalezas y debilidades</h3>
+        </div>
+
+        <p>Cuando llegamos a un lugar desconocido, observamos — muchas veces de forma inconsciente. Al llegar a un jardín en el que vamos a trabajar hay que observar de forma consciente y crítica: ese análisis del contexto es el punto de partida del diseño. Cada lugar tiene un "alma", características que lo definen: no es lo mismo un jardín urbano rodeado de medianeras altas que uno en un pueblo de campo con cercos vivos, o uno con vista a una laguna.</p>
+
+        <p>Conviene levantar algunos datos antes de la primera visita: en Google Maps, vista satelital, ya se puede identificar arbolado en las calles, pulmones de manzana, piscinas, el ancho de las calles. Otra opción es llegar antes de tiempo y dar una vuelta por el barrio, observando qué está plantado en otros jardines, qué funciona y qué no — inspirar el espíritu del lugar.</p>
+
+        <figure class="plate">
+          <img src="img/mod3-relevamiento-satelital.jpg" alt="Vista satelital de Google Maps de un barrio, con el lote a intervenir marcado en rojo" loading="lazy">
+          <figcaption><span>Fig. 01</span> Reconocimiento previo por vista satelital: arbolado, pulmón de manzana y entorno construido</figcaption>
+        </figure>
+
+        <p>Esa observación genera sentimientos: algunos que vale la pena reforzar (pájaros, brisa de verano, el cielo entre los edificios) y otros que vamos a querer minimizar. Es decir, aspectos positivos y negativos — fortalezas y debilidades — que conviene listar para luego sacarles provecho o disimularlos con el diseño, identificando además si están a nivel ojo o a nivel cielo, y si caen dentro o fuera de los límites del terreno.</p>
+
+        <div class="note-card">
+          <p>Ejemplos de fortalezas: vistas a río, lago o montañas; árboles en el horizonte; la floración de una enredadera vecina; plantas añejas en buen estado; el perfume de una flor que no sabemos bien de dónde viene. Ejemplos de debilidades: ventanas vecinas invasoras, torres de agua o de celular, ruidos, polvo, equipos de aire acondicionado o de piscina a la vista.</p>
+        </div>
+      </section>
+
+      <!-- LÁMINA 03 (Módulo III) -->
+      <section class="lamina" id="s13" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 03 / 07</span>
+          <h3>Seis limitaciones del proyecto</h3>
+        </div>
+
+        <p>Como mínimo, hay que considerar estas variables o factores condicionantes para elaborar el diseño: asoleamiento, clima, topografía, límites espaciales, leyes y reglamentos, estilo arquitectónico y regional, y los puntos focales que representan un problema. Clasificadas según el tipo de limitación que imponen:</p>
+
+        <div class="quality-grid">
+          <article class="quality-card">
+            <p class="quality-card__label">Legales</p>
+            <p>Leyes y reglamentos municipales: distancia de plantación a medianeras, especies prohibidas, obligación de esconder tendederos, uso de cercos vivos en vez de muros, área permeable mínima, pulmón de manzana.</p>
+          </article>
+          <article class="quality-card">
+            <p class="quality-card__label">Visuales</p>
+            <p>Elementos estéticamente indeseables, dentro o fuera del jardín: torres de agua, equipos de piscina, cualquier cosa que no se pueda retirar ni mejorar.</p>
+          </article>
+          <article class="quality-card">
+            <p class="quality-card__label">Físicas</p>
+            <p>Barreras visibles o no: bajo tierra, cañerías, desagües, cimientos, cableado, gas; en superficie, construcciones e instalaciones que no se pueden mover.</p>
+          </article>
+          <article class="quality-card">
+            <p class="quality-card__label">Geográficas</p>
+            <p>Latitud, longitud y altura sobre el nivel del mar definen el clima: asoleamiento, régimen de lluvias, vientos y tipo de suelo del lugar.</p>
+          </article>
+          <article class="quality-card">
+            <p class="quality-card__label">Arquitectónicas y regionales</p>
+            <p>El estilo del jardín suele acompañar el de la construcción, aunque en casos puntuales se busca el contraste — frecuente en museos y espacios de exposición.</p>
+          </article>
+          <article class="quality-card">
+            <p class="quality-card__label">Constructivas</p>
+            <p>El peso máximo que soporta una terraza, azotea o balcón: hasta 500 kg/m² en azoteas, 200 kg/m² en balcones en voladizo (macetas, tierra, drenaje, agua, plantas, mobiliario y personas incluidos).</p>
+          </article>
+        </div>
+
+        <div class="note-card note-card--field">
+          <p><strong>Fuente del dato:</strong> Revista Jardín n.º 58, edición especial mayo 2020 — "Diseñá tu jardín".</p>
+        </div>
+      </section>
+
+      <!-- LÁMINA 04 (Módulo III) -->
+      <section class="lamina" id="s14" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 04 / 07</span>
+          <h3>Asoleamiento y proyección de sombras</h3>
+        </div>
+
+        <p>Identificado el norte geográfico se puede establecer el naciente (leste, a la derecha de quien mira hacia el norte) y el poniente. La ruta del sol es un arco ascendente de leste a oeste, más inclinado hacia el sur en invierno. Este análisis permite elegir las especies vegetales según su necesidad lumínica para la fotosíntesis.</p>
+
+        <ul class="checklist">
+          <li><strong>Sol pleno</strong> — mínimo 4 horas de sol diarias</li>
+          <li><strong>Semi-sombra</strong> — entre 1 y 4 horas de sol</li>
+          <li><strong>Sombra</strong> — menos de 1 hora de sol</li>
+        </ul>
+
+        <p>(Tomando como referencia fin de primavera a inicio de otoño.)</p>
+
+        <div class="note-card note-card--field">
+          <p><strong>Nota de campo:</strong> invierno es la época menos favorable de cualquier jardín — pero también el mejor momento para estudiar sus sombras. Los sectores con sol todo el día en invierno también lo tendrán en verano; al llegar la primavera esos sectores se extienden, y se mantienen así hasta mediados de otoño.</p>
+        </div>
+
+        <figure class="plate">
+          <img src="img/mod3-asoleamiento-sombra.jpg" alt="Diagrama de la incidencia de los rayos solares sobre una construcción y un árbol, según la estación del año" loading="lazy">
+          <figcaption><span>Fig. 02</span> El ángulo de incidencia del sol cambia con la estación — de eso depende la sombra que proyectan árboles y construcciones</figcaption>
+        </figure>
+
+        <div class="table-wrap">
+          <table class="sun-table">
+            <thead>
+              <tr><th>Orientación</th><th>Sol</th><th>Mejor época</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>N</td><td>Todo el año, con horas centrales fuertes en verano</td><td>Todo el año</td></tr>
+              <tr><td>NE</td><td>Todo el día en invierno; de la mañana al mediodía el resto del año</td><td>Todo el año</td></tr>
+              <tr><td>E</td><td>De la mañana</td><td>Todo el año</td></tr>
+              <tr><td>SE</td><td>De la mañana, salvo en invierno</td><td>Primavera / verano / otoño</td></tr>
+              <tr><td>S</td><td>Casi sin sol; solo primeras y últimas horas en verano</td><td>Verano</td></tr>
+              <tr><td>SO</td><td>De la tarde, salvo en invierno</td><td>Primavera / verano / otoño</td></tr>
+              <tr><td>O</td><td>De la tarde</td><td>Todo el año</td></tr>
+              <tr><td>NO</td><td>Todo el día en invierno; de la tarde el resto del año</td><td>Todo el año</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="note-card">
+          <p><strong>Hemisferio sur</strong> (referencia Buenos Aires — atención con bibliografía europea, que ubica la primavera en marzo): Primavera = equinoccio 23 de septiembre · Otoño = equinoccio 20 de marzo · Invierno = solsticio 21 de junio, máximo desplazamiento norte · Verano = solsticio 21 de diciembre, máximo desplazamiento sur.</p>
+        </div>
+      </section>
+
+      <!-- LÁMINA 05 (Módulo III) -->
+      <section class="lamina" id="s15" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 05 / 07</span>
+          <h3>Clima, topografía y límites espaciales</h3>
+        </div>
+
+        <p>Del clima conviene registrar:</p>
+
+        <ul class="checklist">
+          <li>Horas de sol según la época del año</li>
+          <li>Vientos (por ejemplo, sudestadas)</li>
+          <li>Posibilidad de heladas</li>
+          <li>Régimen pluviométrico (y de nieve, si aplica)</li>
+          <li>Temperaturas máximas, mínimas y promedio</li>
+        </ul>
+
+        <p>Estos datos influyen directamente en la necesidad de sombra, en la construcción de barreras de viento, polvo o sonido, y en la elección de especies.</p>
+
+        <p>La <strong>topografía</strong> — los desniveles del terreno — influye en el drenaje, creando zonas de distinta humedad: inundables o áridas. También es un recurso de diseño: alterar un nivel puede generar interés en un área monótona, como interrumpir la continuidad visual del horizonte en un campo llano.</p>
+
+        <p>Los <strong>límites espaciales</strong> hay que conocerlos antes de ubicar cualquier especie: ancho, largo, altura y profundidad de suelo disponibles. La vegetación es un elemento vivo de desarrollo dinámico — no calcular bien estos límites genera problemas visuales y de uso, además de accidentes y daños a la propiedad propia o vecina.</p>
+
+        <p>El <strong>estilo regional</strong> de cada comunidad está determinado por sus orígenes culturales: crear un paisajismo árido en medio de un área de conservación de bosque o selva misionera, por ejemplo, puede resultar un fuerte contraste incómodo para quien habita el lugar.</p>
+      </section>
+
+      <!-- LÁMINA 06 (Módulo III) -->
+      <section class="lamina" id="s16" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 06 / 07</span>
+          <h3>El suelo: texturas, pH y drenaje</h3>
+        </div>
+
+        <p>El suelo está formado por partículas minerales (arena, limo, arcilla), aire, agua y materia orgánica. Según el tamaño de esas partículas hay más o menos presencia de oxígeno y agua, lo que determina qué organismos pueden habitarlo. En paisajismo se habla de <strong>sustratos</strong>: suelos preparados a medida de una especie, como uno ácido para plantas de interior o uno arenoso para cactus.</p>
+
+        <figure class="plate">
+          <img src="img/mod3-composicion-suelo.jpg" alt="Tres gráficos circulares comparando la composición de un suelo normal, uno compactado y uno suelto, en mineral, aire, agua y materia orgánica" loading="lazy">
+          <figcaption><span>Fig. 03</span> Un suelo compactado pierde aire y espacio para raíces frente a un suelo suelto (Revista Jardín n.º 58)</figcaption>
+        </figure>
+
+        <ul class="checklist">
+          <li><strong>Arenosos</strong> — muy drenantes, almacenan poca agua, poco fértiles y con poco anclaje para raíces; suelen absorber mucho calor</li>
+          <li><strong>Arcillosos</strong> — de áreas anegadas y húmedas, pesados y de poca porosidad; secos se vuelven extremadamente duros e impiden el buen desarrollo de raíces</li>
+          <li><strong>Francos y limosos</strong> — alto contenido de materia orgánica, muy fértiles, retienen humedad con buena oxigenación: los más indicados para la mayoría de las plantas</li>
+          <li><strong>Con mucha piedra o roca</strong> — poca profundidad, poco alimento y escurrimiento rápido del agua</li>
+        </ul>
+
+        <div class="note-card">
+          <p>La acidez se mide en pH, de 1 (acidez extrema) a 14 (máxima alcalinidad), con el 7 como neutro. Entre 6 y 7,5 es el rango ideal para la mayoría de las plantas, porque en ese pH se disuelve el fósforo permitiendo su absorción por las raíces — junto con el nitrógeno y el potasio, los tres macronutrientes. El pH de Buenos Aires ronda entre 6 y 8, con zonas más ácidas junto a los ríos.</p>
+        </div>
+
+        <div class="note-card note-card--field">
+          <p><strong>Nota de campo:</strong> los suelos encharcados sirven para plantas palustres, pero son perjudiciales para cactus y suculentas — favorecen la pudrición de raíces. Conviene detectar zonas anegadizas y corregirlas con canales de drenaje, pozos o rejillas conectadas a caños pluviales.</p>
+        </div>
+      </section>
+
+      <!-- LÁMINA 07 (Módulo III) -->
+      <section class="lamina" id="s17" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 07 / 07</span>
+          <h3>La entrevista y el mantenimiento</h3>
+        </div>
+
+        <p>Para complementar el relevamiento técnico hace falta coordinar una entrevista personal con quienes van a usar el espacio — en lo posible, en el propio lugar. Es el momento de escuchar e interpretar al usuario, respetar el lugar existente, conservar e incorporar las especies valiosas, equilibrar lo estético con lo práctico, vincular el adentro con el afuera y valorar las especies nativas que suman al corredor ecológico del barrio.</p>
+
+        <p>En esa entrevista conviene relevar:</p>
+
+        <ul class="checklist">
+          <li>Quiénes usarán el espacio: edades, cantidad, géneros, hobbies, deportes practicados</li>
+          <li>Presencia de mascotas</li>
+          <li>Necesidades puntuales: espacio para vehículos, parrilla o quincho, piscina, juegos, huerta, depósito</li>
+          <li>Estilo arquitectónico y preferencia por especies vegetales</li>
+          <li>Deseo de agua y/o fuego en el jardín, y paleta de colores</li>
+          <li>Perfumes sí o no</li>
+          <li>Frecuencia y cantidad de visitas que recibe la casa</li>
+        </ul>
+
+        <p>El diseño también debe anticipar su propio <strong>mantenimiento</strong>:</p>
+
+        <ul class="checklist">
+          <li>Quién lo va a hacer — el dueño o mano de obra especializada — y si tiene alguna limitación física a considerar (por ejemplo, canteros elevados si agacharse es un problema)</li>
+          <li>Con qué frecuencia: semanal, mensual, por temporada</li>
+          <li>Qué herramientas hay disponibles, y si hace falta un espacio para guardarlas</li>
+          <li>Cuánto se quiere invertir — mano de obra, sustratos, plantines de reposición</li>
+        </ul>
+
+        <div class="note-card note-card--field">
+          <p><strong>Dato práctico de campo:</strong> un césped de golf se poda todos los días; una alfombra de césped en casa necesita poda semanal en primavera-verano. Es responsabilidad del diseño elegir con conciencia las especies según el mantenimiento real que ese jardín va a recibir.</p>
+        </div>
+      </section>
+
+      <footer class="content__footer">
+        <p>Resumen elaborado a partir de: Curso de Diseño de Jardines, Módulo III — El Espacio y sus Usuarios (Educación a Distancia, Círculo Agrónomos de Buenos Aires — Docente: Elena Soboleff).</p>
+      </footer>
+
+      </div>
+      <!-- FIN módulo III -->
+
+      <div class="module-content" data-module-content="4" hidden>
+
+      <header class="content__intro">
+        <p class="content__kicker">Guía de estudio · Módulo IV</p>
+        <h2 class="content__title">Preparación del proceso creativo</h2>
+        <p class="content__lede">No hay un solo punto de partida al diseñar un jardín: puede ser un color, una vista, una planta que se queda, una actividad deseada o una limitación legal. Este módulo reúne las herramientas de composición que ordenan ese proceso — del trazado de circulaciones al uso del color.</p>
+      </header>
+
+      <!-- LÁMINA 01 (Módulo IV) -->
+      <section class="lamina" id="s18" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 01 / 08</span>
+          <h3>Orden: circulación y zonificación</h3>
+        </div>
+
+        <p>Observar, caminar, mirar libros e imaginar el uso del espacio son las herramientas de inspiración. Respetando las variables técnicas ya vistas, una buena forma de empezar es estudiar los sectores del jardín y pensar dónde conviene ubicar cada elemento — sobre todo los que necesitan condiciones especiales, como una huerta que pide al menos 6 horas de sol diarias, o una piscina a la que no queremos que le caiga la sombra justo en su horario de mayor uso.</p>
+
+        <p>Teniendo en cuenta las actividades a desarrollar se definen los sectores:</p>
+
+        <ul class="checklist">
+          <li><strong>Entrada / fachada / acceso</strong> — ¿hay entrada de servicio además de la social? ¿Cómo generamos privacidad y seguridad?</li>
+          <li><strong>Zona de servicios</strong> — tendedero, bicicletas, autos, herramientas, acceso del jardinero o piletero</li>
+          <li><strong>Relajamiento</strong> — ¿habrá un área íntima, de lectura?</li>
+          <li><strong>Deportes y actividades externas</strong> — parrilla, quincho, piscina, canchas, huerta, juegos infantiles, espejo de agua, esculturas</li>
+        </ul>
+
+        <figure class="plate">
+          <img src="img/mod4-zonificacion.jpg" alt="Diagrama de zonificación de un jardín con manchas de color señalando fachada, cochera, huerta, piscina, quincho y área de juegos" loading="lazy">
+          <figcaption><span>Fig. 01</span> Sectorización a grosso modo, y luego los sectores individuales con sus actividades</figcaption>
+        </figure>
+
+        <p>Definidos los sectores hay que <strong>jerarquizarlos</strong>: decidir cuáles tienen más relevancia y por lo tanto recibirán un tratamiento diferenciado — plantas más desarrolladas para llegar a resultados rápidos, materiales más nobles. También puede significar resignar algún deseo para poder cumplir otro más importante.</p>
+
+        <p>Después viene la <strong>circulación</strong>: ¿construyo caminos? ¿Cómo circulo los días de lluvia? ¿Hacen falta techos y abrigos? ¿Y el drenaje? Se marcan los recorridos desde la entrada de autos y peatonal hacia la cochera, desde la casa a los sectores externos, y entre esos sectores.</p>
+      </section>
+
+      <!-- LÁMINA 02 (Módulo IV) -->
+      <section class="lamina" id="s19" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 02 / 08</span>
+          <h3>Figura y fondo</h3>
+        </div>
+
+        <p>El fondo es el soporte; sobre este va la figura. Es una definición prestada de la pintura, muy explorada en publicidad y fotografía. El fondo puede ser <strong>simple</strong> (monocromático) o <strong>complejo</strong> (policromático) — una página en blanco con un logo, frente a una foto del Caribe con el texto de una agencia de viajes encima. Lo mismo vale para la figura.</p>
+
+        <p>¿Cómo funciona esto en un jardín? En un paisaje rural el fondo puede ser una plantación de pinos o el pasto con el ganado; en una ciudad, los edificios o los árboles del jardín vecino. Hay que decidir si nuestro jardín se destacará sobre ese fondo, se mezclará con él, o si trataremos de disimularlo.</p>
+
+        <div class="note-card">
+          <p>Si el jardín vecino tiene muchos liquidámbar, sabemos que el fondo será verde en primavera y verano, rojizo en otoño y vacío en invierno — dando lugar a otro fondo distinto: el cielo y las construcciones detrás de esas copas.</p>
+        </div>
+      </section>
+
+      <!-- LÁMINA 03 (Módulo IV) -->
+      <section class="lamina" id="s20" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 03 / 08</span>
+          <h3>Puntos focales</h3>
+        </div>
+
+        <p>En cada división del área existirán siempre uno o más puntos de atracción visual que deben recibir tratamiento adecuado y destaque en la composición. Son aspectos positivos, potencialidades: la vista desde una ventana o una puerta, desde el banco donde nos sentamos a leer y tomar mate, el sol naciente, el horizonte del río.</p>
+
+        <p>También hay <strong>puntos focales negativos</strong> — debilidades que trataremos de disimular. Un foco de atracción llamativo funciona bien como recurso para desviar la atención de un componente desagradable: una construcción fea, tanques de agua, torres de celular, publicidad. Se puede combinar una barrera vegetal que tape el elemento con algo de fuerte atracción visual a la altura de la vista.</p>
+
+        <div class="note-card note-card--field">
+          <p><strong>Dato de composición:</strong> lo que más nos llama la atención está a altura de ojo. El ser humano mira normalmente en un ángulo de 60 grados con los ojos como eje central — 30 grados hacia arriba y 30 hacia abajo. En ese ángulo conviene crear los puntos de interés focal que funcionen como imanes.</p>
+        </div>
+
+        <p>Sirven como puntos focales: plantas, iluminación, fuego, agua, movimiento, elementos escultóricos, líneas geométricas, color, vistas, la posibilidad de sentarse a disfrutar del espacio, curvas que generan curiosidad y desniveles.</p>
+      </section>
+
+      <!-- LÁMINA 04 (Módulo IV) -->
+      <section class="lamina" id="s21" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 04 / 08</span>
+          <h3>Formas y tramas</h3>
+        </div>
+
+        <p>La trama dirige el diseño: es la "ley" organizadora del espacio. La más conocida es la cuadrícula. Se pueden crear células-base a partir de las formas simples — cuadrado, triángulo equilátero, hexágono regular y círculo — y repetirlas para generar la trama que orientará el diseño.</p>
+
+        <p>Muchas veces las tramas surgen de formas o módulos que ya existen en la arquitectura del lugar: las medidas de ventanas y puertas, el espaciamiento entre columnas, o las baldosas.</p>
+
+        <figure class="plate">
+          <img src="img/mod4-trama.jpg" alt="Trama sobre papel cuadriculado formada por la repetición de un módulo, con una X y una cruz remarcadas en color" loading="lazy">
+          <figcaption><span>Fig. 02</span> Un mismo módulo repetido con espacio entre sí genera una trama distinta: se leen Xs y cruces según la mirada</figcaption>
+        </figure>
+
+        <p>La trama da estructura y ayuda a definir el estilo: el <strong>diseño geométrico</strong> usa más la cuadrícula, el triángulo y los círculos claramente definidos; el <strong>diseño orgánico</strong> es más libre, lleno de curvas y sin rectas — algo que no existe en la naturaleza.</p>
+      </section>
+
+      <!-- LÁMINA 05 (Módulo IV) -->
+      <section class="lamina" id="s22" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 05 / 08</span>
+          <h3>Equilibrio, simetría y escala humana</h3>
+        </div>
+
+        <p>Las líneas de composición determinan el carácter del diseño:</p>
+
+        <ul class="legend">
+          <li><span class="legend__swatch legend__swatch--a" aria-hidden="true"></span><div><strong>Medianas</strong> — resultan en una composición estática, más quieta.</div></li>
+          <li><span class="legend__swatch legend__swatch--b" aria-hidden="true"></span><div><strong>Diagonales</strong> — composición dinámica hacia uno de los vértices, con tensión hacia los bordes.</div></li>
+        </ul>
+
+        <figure class="plate">
+          <img src="img/mod4-equilibrio.jpg" alt="Dos esquemas comparando una composición sobre líneas medianas y otra sobre diagonales" loading="lazy">
+          <figcaption><span>Fig. 03</span> Medianas (izquierda) frente a diagonales (derecha): quietud contra dinamismo</figcaption>
+        </figure>
+
+        <p>El ojo lee el lado derecho y el derecho inferior como más fuertes: en nuestra cultura, que lee de izquierda a derecha, ahí es donde hay más tensión visual. Por eso los cuadros suelen firmarse abajo a la derecha, para no interferir con la composición sin perderse en ella.</p>
+
+        <p>Sobre la <strong>escala humana</strong>: el ser humano necesita contención. Muchas veces elegimos sentarnos a una mesa con sombrilla aunque después corramos las sillas para estar al sol — la sombrilla nos da un techo. En el jardín podemos pensar las plantas altas como paredes, las pérgolas y copas de árboles como techo, y los cubresuelos como solado.</p>
+
+        <div class="note-card">
+          <p>Las estructuras monumentales demuestran lo chico que es el ser humano frente a la ley (la Facultad de Derecho de la UBA) o frente a Dios (Notre Dame): imponen respeto, fuerza y poder, posiblemente miedo y sumisión. Con estructuras más acordes a la altura del hombre se obtienen resultados más acogedores.</p>
+        </div>
+      </section>
+
+      <!-- LÁMINA 06 (Módulo IV) -->
+      <section class="lamina" id="s23" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 06 / 08</span>
+          <h3>Repetición de especies e interés todo el año</h3>
+        </div>
+
+        <p>El ejemplo del módulo es el Parque Hitachi Seaside Park, en Hitachinaka, Japón: lograron generar un parque con interés de visitación constante empleando especies de gran impacto visual, cada una en su momento de gloria, en la época del año que le toca ser reina.</p>
+
+        <figure class="plate">
+          <img src="img/mod4-repeticion.jpg" alt="Colina cubierta por miles de matas rojas de Kochia scoparia en el parque Hitachi Seaside Park" loading="lazy">
+          <figcaption><span>Fig. 04</span> Kochia scoparia repetida a gran escala — el impacto viene de la repetición, no de la variedad</figcaption>
+        </figure>
+
+        <p>Generar interés de día y de noche, en primavera, verano, otoño e invierno es una tarea difícil pero no imposible. En Hitachi lo resuelven iluminando las kochias con luces LED en eventos nocturnos, y rotando narcisos, tulipanes, nemophila y rosales a lo largo del año.</p>
+
+        <div class="note-card note-card--field">
+          <p><strong>Recurso aplicable:</strong> otra forma de generar interés durante todo el año es sacar provecho de los cambios de las especies caducas en cada estación — floración, color otoñal, ramas desnudas en invierno.</p>
+        </div>
+      </section>
+
+      <!-- LÁMINA 07 (Módulo IV) -->
+      <section class="lamina" id="s24" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 07 / 08</span>
+          <h3>Texturas</h3>
+        </div>
+
+        <p>Un jardín debe estimular todos los sentidos: color, sonido (aves, viento), aromas, sabores y texturas. También la permeabilidad de la luz en plantas de distinta densidad confiere sensaciones distintas y crea movimiento de luces.</p>
+
+        <figure class="plate">
+          <img src="img/mod4-texturas.jpg" alt="Jardín con agaves, cactus y suculentas de hojas lanceoladas junto a una piscina y muros de piedra" loading="lazy">
+          <figcaption><span>Fig. 05</span> Hojas lanceoladas — formios, iris, agaves, bromelias, cicas — transmiten dureza y aridez</figcaption>
+        </figure>
+
+        <ul class="legend">
+          <li><span class="legend__swatch legend__swatch--a" aria-hidden="true"></span><div><strong>Hojas lanceoladas</strong> (formios, iris, agaves, bromelias, cicas) — tienen lectura propia, sirven individualmente o en grupos, y transmiten dureza y aridez.</div></li>
+          <li><span class="legend__swatch legend__swatch--b" aria-hidden="true"></span><div><strong>Hojas ovaladas o redondeadas</strong> — transmiten suavidad y resultan más acogedoras; mezcladas con cercos vivos topiados en formas geométricas duras generan cierta incomodidad por contraste.</div></li>
+        </ul>
+      </section>
+
+      <!-- LÁMINA 08 (Módulo IV) -->
+      <section class="lamina" id="s25" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 08 / 08</span>
+          <h3>Color y composición cromática</h3>
+        </div>
+
+        <p>Uno de los aspectos más importantes para llegar a una composición armoniosa es el uso equilibrado del color. Para ayudarse conviene recurrir al disco cromático: usar primarios descompuestos gradualmente en matices, trabajar los complementarios y los secundarios, o decidirse por fuertes contrastes llamativos.</p>
+
+        <ul class="checklist">
+          <li><strong>Análogos</strong> — dos o tres colores seguidos en el círculo cromático; lo que solemos llamar "gamas"</li>
+          <li><strong>Complementarios</strong> — colores opuestos en el círculo; siempre la unión de uno frío con uno cálido (su mezcla da un marrón)</li>
+        </ul>
+
+        <p>Las cuatro características del color son la <strong>temperatura</strong> (frío o cálido), el <strong>valor</strong> (más o menos blanco/negro, la luminosidad que se nota al ver una imagen en blanco y negro), la <strong>saturación</strong> (saturado = puro, desaturado = mezclado) y el <strong>matiz</strong> (el pigmento propiamente dicho).</p>
+
+        <div class="table-wrap">
+          <table class="sun-table">
+            <thead>
+              <tr><th>Grupo</th><th>Colores</th><th>Sensación que transmiten</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Livianos</td><td>Azul, verde, amarillo verdoso</td><td>Paz y tranquilidad; son sedantes</td></tr>
+              <tr><td>Pesados</td><td>Morado, púrpura, rojo, naranja, amarillo</td><td>Crean límites por concentración visual; seguridad y firmeza</td></tr>
+              <tr><td>Activos</td><td>Rojo y sus matices</td><td>Predominan como puntos focales; efecto excitante</td></tr>
+              <tr><td>Ligeros</td><td>Amarillo al naranja</td><td>Liviandad e hiperactividad visual; pueden ser irritantes</td></tr>
+              <tr><td>Cálidos</td><td>Rojo al naranja</td><td>Sensación de calor, seguridad y firmeza</td></tr>
+              <tr><td>Fríos</td><td>Verde al azul</td><td>Tranquilizantes y luminosos; frescor y protección</td></tr>
+              <tr><td>Íntimos</td><td>Amarillo verdoso al verde</td><td>Acogedores, crean intimidad</td></tr>
+              <tr><td>Pasivos</td><td>Verde al azul</td><td>Calma e intimidad, acogiendo pasivamente</td></tr>
+              <tr><td>Oscuros</td><td>Rojo, púrpura, violeta, morado, azul y verde oscuro</td><td>Serenidad y distinción; si predominan, causan depresión</td></tr>
+              <tr><td>Claros</td><td>Naranja claro, amarillo, amarillo verdoso, lila claro</td><td>Crean límites por concentración visual; seguridad y firmeza</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="note-card note-card--field">
+          <p><strong>Fenología = época de floración.</strong> Conviene estudiarla especie por especie, y considerar además los colores otoñales, de hojas, cortezas y frutos. Puede ser útil dibujar dos planos — uno de otoño/invierno y otro de primavera/verano — para entender el comportamiento cromático del jardín a lo largo del tiempo.</p>
+        </div>
+      </section>
+
+      <footer class="content__footer">
+        <p>Resumen elaborado a partir de: Curso de Diseño de Jardines, Módulo IV — Preparación del Proceso Creativo (Educación a Distancia, Círculo Agrónomos de Buenos Aires — Docente: Elena Soboleff).</p>
+      </footer>
+
+      </div>
+      <!-- FIN módulo IV -->
+
+      <div class="module-content" data-module-content="5" hidden>
+
+      <header class="content__intro">
+        <p class="content__kicker">Guía de estudio · Módulo V</p>
+        <h2 class="content__title">Proceso creativo: el diseño y su presentación</h2>
+        <p class="content__lede">El proceso de diseño lleva tiempo. Plasmar ideas en un plano permite probar soluciones hasta llegar a una que funcione desde la circulación, la funcionalidad, lo ornamental y lo técnico — y después hay que saber comunicarla.</p>
+      </header>
+
+      <!-- LÁMINA 01 (Módulo V) -->
+      <section class="lamina" id="s26" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 01 / 09</span>
+          <h3>El diseño: el equilibrio entre llenos y vacíos</h3>
+        </div>
+
+        <p>Un jardín equilibrado y bien proporcionado invita a permanecer en él, a vivirlo y descubrirlo. Los dos errores opuestos que lo impiden son:</p>
+
+        <ul class="legend">
+          <li><span class="legend__swatch legend__swatch--a" aria-hidden="true"></span><div><strong>Exceso de especies o canteros</strong> — sobrepasa al visitante con información visual. Cuando las plantas compiten por nuestra atención perdemos el foco, no sabemos qué mirar primero, y eso provoca una irritación difícil de identificar que quita las ganas de permanecer.</div></li>
+          <li><span class="legend__swatch legend__swatch--b" aria-hidden="true"></span><div><strong>Plantas que solo acompañan las paredes</strong> redibujando el perímetro, con grandes vacíos en el centro: miramos, y perdemos el interés. No hay nada por descubrir, de un vistazo recorremos todo y nos aburrimos.</div></li>
+        </ul>
+
+        <p>Un espacio bien diseñado encuentra el <strong>equilibrio entre llenos y vacíos</strong>: entre sectores poblados por plantas y espacios de estar, caminos y estructuras. Recorrer un jardín y descubrir sus encantos es un gran placer — el diseño debe contemplar esas sorpresas.</p>
+
+        <div class="note-card">
+          <p>La excepción difícil de lograr son los jardines de estilo inglés: compuestos de una gran variedad de especies, texturas y colores, pero que a la vez logran equilibrio y armonía.</p>
+        </div>
+      </section>
+
+      <!-- LÁMINA 02 (Módulo V) -->
+      <section class="lamina" id="s27" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 02 / 09</span>
+          <h3>Forma: jardines geométricos y orgánicos</h3>
+        </div>
+
+        <p>En los <strong>jardines geométricos</strong> identificamos líneas, círculos, rectángulos, diagonales, espacios marcados. Son más duros, parecen más limpios y ordenados.</p>
+
+        <p>Los <strong>jardines orgánicos</strong> desdibujan: son libres, sueltos. En la naturaleza las líneas perfectamente rectas no existen. Los espacios redondeados y las curvas concéntricas son más acogedores y cálidos.</p>
+
+        <figure class="plate plate--pair">
+          <div class="plate__item">
+            <img src="img/mod5-geometrico.jpg" alt="Jardín geométrico con piscina rectangular, solado recto y setos alineados junto a una casa" loading="lazy">
+            <figcaption><span>Fig. 01</span> Geométrico — las líneas acompañan la arquitectura (Roberto Riscala, Brasil)</figcaption>
+          </div>
+          <div class="plate__item">
+            <img src="img/mod5-organico.jpg" alt="Jardín de formas orgánicas con césped curvo, tronco tendido y vegetación densa" loading="lazy">
+            <figcaption><span>Fig. 02</span> Orgánico — la elección de materiales refuerza la visión (Marcelo Novaes, Brasil)</figcaption>
+          </div>
+        </figure>
+
+        <div class="note-card note-card--field">
+          <p><strong>Cómo se arranca:</strong> inspirándose en alguna característica del espacio se elige una trama que oriente el diseño. Con esa trama, y teniendo en cuenta la sectorización según las áreas de estar y el asoleamiento, se diseñan canteros y se ubican árboles y estructuras — siempre respetando el tamaño final que cada planta va a adquirir, o el tamaño que nos comprometemos a mantener con podas.</p>
+        </div>
+      </section>
+
+      <!-- LÁMINA 03 (Módulo V) -->
+      <section class="lamina" id="s28" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 03 / 09</span>
+          <h3>Los cinco sentidos en el jardín</h3>
+        </div>
+
+        <p>El jardín es un espacio perfecto para estimular todos los sentidos — la visión es apenas una pequeña parte de lo que podemos trabajar.</p>
+
+        <div class="quality-grid">
+          <article class="quality-card">
+            <p class="quality-card__label">Sonido</p>
+            <p>Agua en movimiento (fuentes, cascadas, chorros), peces y ranas que saltan, canto de pájaros, y elementos que suenan con el viento como caireles o las flautas gigantes del Paseo del Viento en Vicente López.</p>
+          </article>
+          <article class="quality-card">
+            <p class="quality-card__label">Tacto</p>
+            <p>Distintos solados — césped, piedras, hojarasca, arena — que se sienten diferente aún con calzado y fortalecen ligamentos y equilibrio. Hojas aterciopeladas, pinches de rosales, troncos lisos y rugosos.</p>
+          </article>
+          <article class="quality-card">
+            <p class="quality-card__label">Temperatura</p>
+            <p>La transición entre un sector de sombra densa y fresca y el rayo del sol se siente en la piel; encontrar un lugar agradable al sol en invierno es parte del diseño.</p>
+          </article>
+          <article class="quality-card">
+            <p class="quality-card__label">Aroma y paladar</p>
+            <p>Es fácil incorporar plantas aromáticas y comestibles sin necesariamente incluir una huerta en el diseño.</p>
+          </article>
+          <article class="quality-card">
+            <p class="quality-card__label">Movimiento</p>
+            <p>El viento hace bailar los penachos de las gramíneas —doradas al atardecer— y mueve las copas de los árboles en una tormenta. Mariposas, aves y pequeños reptiles aportan vida.</p>
+          </article>
+          <article class="quality-card">
+            <p class="quality-card__label">Un desafío</p>
+            <p>Crear un jardín sensitivo para no videntes o personas con otro tipo de deficiencia puede ser un lindo desafío y un gran descubrimiento para uno mismo.</p>
+          </article>
+        </div>
+
+        <div class="note-card">
+          <p>Cuidado con las irregularidades del piso: deben ser perceptibles — los pozos invisibles causan accidentes.</p>
+        </div>
+      </section>
+
+      <!-- LÁMINA 04 (Módulo V) -->
+      <section class="lamina" id="s29" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 04 / 09</span>
+          <h3>Materiales extra-vegetales</h3>
+        </div>
+
+        <p>Cuando pensamos en un jardín pensamos automáticamente en plantas, pero no son lo único. Los <strong>materiales extra-vegetales</strong> (o recursos arquitectónicos) son los que delimitan, crean caminos, canteros, estructuras y puntos de interés: esculturas, elementos decorativos, iluminación. Deben elegirse cuidadosamente como parte del diseño — si no, corremos el riesgo de que no armonicen con la arquitectura, con la decoración interior ni con el jardín mismo.</p>
+
+        <div class="note-card note-card--field">
+          <p><strong>Los materiales otorgan identidad.</strong> Al repetirlos —y también a ciertas especies— en distintos sectores creamos unidad. Si en la entrada hay un camino de durmientes de quebracho bordeado de hortensias, y en el fondo un cantero de hortensias delimitado con durmientes y bancos del mismo material, sentimos que estamos en el mismo jardín: hay continuidad.</p>
+        </div>
+
+        <p>Siempre que sea posible conviene usar materiales propios de la región — una forma de valorar la cultura local y de bajar costos — además de reaprovechar materiales e incorporar elementos reciclados.</p>
+
+        <p>Para estructurar las áreas secas se puede recurrir a:</p>
+
+        <ul class="checklist">
+          <li>Solados, pérgolas, techos de paja, cercos, alambrados y estructuras para enredaderas</li>
+          <li>Contenedores elevados para huerta — cuidan la espalda, facilitan el acceso y protegen de los perros</li>
+          <li>Pasos perdidos y escalones para conectar espacios y contener taludes</li>
+          <li>Piscinas naturales o químicas, espejos de agua, estanques con plantas acuáticas y peces</li>
+          <li>Fogones alejados de las copas y con solados ignífugos, rodeados de bancos o piedras (no más cerca de 1m)</li>
+          <li>Juegos para chicos, espacios de meditación y lectura, invernaderos, galpones y espacios de guardado</li>
+          <li>Un lugar discreto para colgar la ropa, canchas de deportes, macetas y jardineras</li>
+        </ul>
+      </section>
+
+      <!-- LÁMINA 05 (Módulo V) -->
+      <section class="lamina" id="s30" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 05 / 09</span>
+          <h3>Los grupos de plantas</h3>
+        </div>
+
+        <p>Los recursos vegetales se eligen con criterios ornamentales, funcionales y técnicos: respetando los requerimientos de sol, agua, humedad, protección al viento y tipo de suelo de cada especie, y también su tipo de desarrollo. No pongamos un roble en un jardín de 3×3m.</p>
+
+        <div class="table-wrap">
+          <table class="sun-table">
+            <thead>
+              <tr><th>Grupo</th><th>Qué son y qué hay que mirar</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Árboles</td><td>El techo del jardín. Hay que estudiar altura y diámetro finales, desarrollo radicular, tipo de copa y fortaleza de la madera. Son los que más daño pueden ocasionar: el grupo que más atención merece.</td></tr>
+              <tr><td>Arbustos</td><td>Leñosas de varios troncos desde el suelo, de 0,5m a 7m o más. Muy plásticos, aceptan bien la poda — sirven para cercos vivos y topiarias. Algunos buscan agua y pueden romper cañerías.</td></tr>
+              <tr><td>Herbáceas</td><td>Sin lignina, de consistencia tierna; florecen mucho y crean volumen o tapizan. Anuales, bianuales o perennes (más de dos años).</td></tr>
+              <tr><td>Enredaderas y trepadoras</td><td>Tallos largos y flexibles con órganos para sujetarse; necesitan estructuras y soportes. Se suman aquí los arbustos apoyantes.</td></tr>
+              <tr><td>Cubresuelos</td><td>El piso del jardín: poca altura, tallos tiernos, crecimiento horizontal enraizando guías.</td></tr>
+              <tr><td>Céspedes</td><td>Cubresuelos pisoteables de la familia de las gramíneas, que podamos para mantenerlos a nuestro gusto.</td></tr>
+              <tr><td>Acuáticas y palustres</td><td>Requieren espacios diseñados para ellas y agua a su medida.</td></tr>
+              <tr><td>Epífitas</td><td>Pueden vivir sobre troncos secos o alambrados.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>Factores a tener en cuenta al elegir cada especie:</p>
+
+        <ul class="checklist">
+          <li><strong>Follaje</strong> — persistencia, textura, tamaño de hoja (no conviene un árbol caduco de hoja chica cerca de una piscina), color otoñal, aroma, sonido que genera (el álamo plateado suena a mar), tipo de sombra</li>
+          <li><strong>Floración</strong> — época, color, duración, aroma, atracción de aves e insectos, textura (las flores del palo borracho son resbaladizas al caer)</li>
+          <li><strong>Fructificación</strong> — época, tipo y tamaño de fruto (no es agradable ser bombardeado por paltas maduras durante un asado), aroma (el fruto del <em>Gingko biloba</em> huele mal), toxicidad para mascotas o humanos</li>
+          <li><strong>Tamaño y forma de copa</strong> — globosa, piramidal, columnar, aparasolada, arbustiva, péndula, cónica</li>
+          <li><strong>Tipo de crecimiento</strong> — rápido, mediano o lento, para planear la compra, el reemplazo y la poda</li>
+        </ul>
+
+        <figure class="plate">
+          <img src="img/mod5-alturas.jpg" alt="Esquema en cuatro franjas de altura: suelo hasta 15cm, delante 15 a 60cm, medio 60 a 150cm y fondo más de 150cm" loading="lazy">
+          <figcaption><span>Fig. 03</span> Escalonado de alturas: de las más bajas hacia las más altas, permitiendo visualizarlas a todas</figcaption>
+        </figure>
+
+        <div class="note-card">
+          <p>Si ese mismo conjunto se puede observar desde el lado opuesto, tendremos más bien una pared de 1,50m de altura: podemos optar por ese efecto, o volver a bajar las alturas formando una parábola.</p>
+        </div>
+      </section>
+
+      <!-- LÁMINA 06 (Módulo V) -->
+      <section class="lamina" id="s31" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 06 / 09</span>
+          <h3>Nativas y exóticas</h3>
+        </div>
+
+        <p>Al elegir qué planta ocupará cada espacio hay que considerar su costo, su longevidad, y si se trata de una especie nativa que interactúa con la fauna local o de una exótica que puede volverse invasiva y representar un problema ecológico.</p>
+
+        <ul class="legend">
+          <li><span class="legend__swatch legend__swatch--a" aria-hidden="true"></span><div><strong>Nativas</strong> — adaptadas al clima, suelo y precipitaciones locales. Atraen polinizadores y controladores de plagas, pueden purificar agua o retener metales pesados, requieren poco mantenimiento, se reproducen espontáneamente y aportan a los corredores ecológicos.</div></li>
+          <li><span class="legend__swatch legend__swatch--b" aria-hidden="true"></span><div><strong>Exóticas</strong> — pueden estar bien adaptadas, pero suelen requerir más mantenimiento, recambio de suelo y más riego. Sin controladores naturales pueden volverse invasoras. Aportan belleza, familiaridad y recuerdos, y también atraen fauna — pero conviene mirarlas con atención antes de decidir que ocupen todo el jardín.</div></li>
+        </ul>
+
+        <div class="note-card note-card--field">
+          <p><strong>Dato del censo:</strong> el censo del arbolado urbano de 2011 de la Ciudad de Buenos Aires reveló que más del 45% de los árboles de vereda son fresnos. Es una exótica sin controladores naturales que empieza a comportarse como invasiva; si una plaga la atacara, la ciudad podría perder cerca del 25% de su arbolado lineal — la sombra de verano, el aire respirable, la retención de polvo y agua de lluvia.</p>
+        </div>
+
+        <p>El módulo trae listados de especies de fácil cultivo para el Gran Buenos Aires, con al menos tres nativas por categoría. Algunos ejemplos:</p>
+
+        <ul class="checklist">
+          <li><strong>Árboles</strong> — Anacahuita (<em>Blepharocalyx salicifolius</em>), Ceibo (<em>Erythrina crista-galli</em>, nuestra flor nacional), Tala (<em>Celtis ehrembergiana</em>), Jacarandá, Liquidámbar, Ciprés calvo (la única conífera con color otoñal)</li>
+          <li><strong>Arbustos</strong> — Barba de chivo (<em>Caesalpinea gilliesi</em>), Flor de seda (<em>Calliandra parvifolia</em>), Malvavisco (<em>Pavonia hastata</em>), Hortensia, Abelia, Azarero</li>
+          <li><strong>Herbáceas</strong> — Canario rojo (<em>Dicliptera tweediana</em>), Margarita punzó (<em>Glandularia peruviana</em>), Nim-nim (<em>Acmella decumbens</em>), Agapanto, Echinacea, Hemerocalis</li>
+          <li><strong>Cubresuelos</strong> — Dichondra (<em>Dichondra microcalyx</em>), Salvia rastrera (<em>Salvia procurrens</em>), Culandrillo (<em>Adianthum cuneatum</em>), Liriope, Vinca</li>
+          <li><strong>Enredaderas</strong> — M'Burucuyá (<em>Passiflora coerulea</em>), Mariposera (<em>Heteropteris glabra</em>), Dama de noche (<em>Ipomea alba</em>), Glicina, Jazmín del cielo</li>
+          <li><strong>Acuáticas y palustres</strong> — Achira amarilla (<em>Canna glauca</em>), Totora (<em>Typha latifolia</em>), Cucharero (<em>Echinodorus grandiflorus</em>), Nenúfar blanco</li>
+        </ul>
+
+        <div class="note-card">
+          <p>Dos especies que el módulo señala para conocer pero no usar: el <strong>Fresno americano</strong> (<em>Fraxinus pennsylvanica</em>), porque ya hay demasiados, y el <strong>Ligustrino</strong> (<em>Ligustrum sinensis</em>), exótico e invasivo.</p>
+        </div>
+      </section>
+
+      <!-- LÁMINA 07 (Módulo V) -->
+      <section class="lamina" id="s32" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 07 / 09</span>
+          <h3>Fichas de especies</h3>
+        </div>
+
+        <p>Para aprovechar mejor el estudio de las plantas conviene elaborar fichas o listados con la información más relevante de cada especie:</p>
+
+        <ul class="checklist">
+          <li><strong>Nombre científico</strong> — género en mayúscula y especie en minúscula, siempre en grafía distinta al texto normal (cursiva o subrayado): <em>Tessaria integrifolia</em></li>
+          <li><strong>Nombre común</strong> — Aliso de río</li>
+          <li><strong>Grupo al que pertenece</strong>, para poder ordenar las fichas — Árbol</li>
+          <li><strong>Breve descripción</strong> — con tablas se pueden abrir columnas: floración, fructificación, interacción con fauna</li>
+          <li><strong>Altura</strong> (3–8m, porte delgado, siempre en grupos), <strong>diámetro</strong> (2m), <strong>crecimiento</strong> (mediano-rápido)</li>
+          <li><strong>Persistencia de hojas</strong> — persistente (o perenne, es lo mismo)</li>
+          <li><strong>Imagen o dibujo a mano alzada</strong></li>
+        </ul>
+
+        <div class="note-card note-card--field">
+          <p><strong>Ojo con el comportamiento variable:</strong> una misma especie se comporta distinto según el espacio. Un ceibo que creció en medio de una isla del delta compitiendo por luz se hace alto y flaco; otro que creció en una plaza urbana con poca agua resulta más escultórico y retorcido.</p>
+        </div>
+      </section>
+
+      <!-- LÁMINA 08 (Módulo V) -->
+      <section class="lamina" id="s33" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 08 / 09</span>
+          <h3>Presentar el proyecto</h3>
+        </div>
+
+        <p>Cuando el diseño es para un cliente —sobre todo si el proyecto es grande— se hace primero un <strong>anteproyecto</strong>, se presenta, se adapta según los comentarios recibidos, y así hasta llegar al proyecto final. Pueden hacer falta varias presentaciones. En el jardín propio se puede ir directo al proyecto, aunque conviene pedir opinión a los demás usuarios del espacio.</p>
+
+        <p>El anteproyecto se presenta personalmente; sus modificaciones pueden presentarse a distancia si nos damos cuenta de que el cliente sabe leer un plano.</p>
+
+        <figure class="plate">
+          <img src="img/mod5-plano-presentacion.jpg" alt="Plano de paisajismo coloreado a mano, con canteros, zona de estar, grava, césped y especies numeradas" loading="lazy">
+          <figcaption><span>Fig. 04</span> Plano de presentación coloreado a mano — obligatorio, en escala y con las plantas en tamaño adulto</figcaption>
+        </figure>
+
+        <p>Materiales de presentación posibles:</p>
+
+        <ul class="checklist">
+          <li><strong>Plano de presentación</strong> (obligatorio) — en escala, con las plantas dibujadas en su tamaño adulto para dar idea del resultado final. Un plano en colores es más amigable; uno monocromático puede ser el indicado para un diseño minimalista</li>
+          <li><strong>Elevaciones, cortes, croquis y perspectivas</strong> — ayudan a entender la idea; no siempre es fácil leer un plano, hace falta abstracción</li>
+          <li><strong>Fotos de las especies elegidas</strong>, para que la idea se entienda completa</li>
+          <li><strong>Materiales extra-vegetales propuestos</strong> — fotos o muestras del tipo de madera, solado, flejes de metal, estilo de luminarias</li>
+          <li><strong>Fotomontajes</strong> — sobre fotos del espacio real; conviene limpiar antes la foto original, los restos de obra al fondo molestan al imaginar el resultado</li>
+          <li><strong>Maquetas electrónicas 3D</strong> (SketchUp) — permiten paseos virtuales que dan idea de profundidad, altura y volumen</li>
+        </ul>
+
+        <figure class="plate plate--pair">
+          <div class="plate__item">
+            <img src="img/mod5-croquis-perspectiva.jpg" alt="Croquis a mano alzada en perspectiva de un patio con macetas, espejo de agua y solado de placas" loading="lazy">
+            <figcaption><span>Fig. 05</span> Croquis a mano alzada — cálido, muestra lo que vería un observador desde un punto</figcaption>
+          </div>
+          <div class="plate__item">
+            <img src="img/mod5-elevacion.jpg" alt="Elevación o corte de un jardín mostrando árboles y arbustos a distintas alturas con su paleta de colores" loading="lazy">
+            <figcaption><span>Fig. 06</span> Elevación o corte — muestra alturas, llenos y vacíos a nivel vertical, y la paleta</figcaption>
+          </div>
+        </figure>
+
+        <div class="note-card note-card--field">
+          <p><strong>Recomendación:</strong> presentar el proyecto en el espacio donde será implantado, para poder caminarlo señalando sectores, alturas, volúmenes y espacios ocupados por estructuras.</p>
+        </div>
+      </section>
+
+      <!-- LÁMINA 09 (Módulo V) -->
+      <section class="lamina" id="s34" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 09 / 09</span>
+          <h3>Leer un plano y armar los listados</h3>
+        </div>
+
+        <p>El módulo analiza críticamente un plano de paisajismo real (Fig. 04). Lo que <strong>falta</strong>: no hay indicación del norte, ni sabemos el hemisferio o la latitud — por lo tanto no tenemos idea del asoleamiento. Tampoco está la leyenda o tabla de especies con códigos, simbología, género y especie, lo que impide imaginar alturas, floraciones, colores y mantenimiento.</p>
+
+        <p>Lo que <strong>sí</strong> se puede leer: se accede al jardín desde una puerta arriba a la derecha; el solado del pasillo se repite en el centro identificado como grava, lo que anticipa qué sentiremos al transitarlo y sugiere una zona permeable al agua. Al fondo, un imponente punto focal —el <em>Cornus</em>— invita a descubrir el jardín. No hay repetición de especies, lo que da un jardín muy variado que exige un diseño cuidadosamente pensado.</p>
+
+        <div class="note-card note-card--field">
+          <p><strong>Truco de escala:</strong> una puerta al exterior mide al menos 80cm de ancho, normalmente 90cm. Con esa unidad de referencia se deduce que el círculo de césped del plano mide unos 4,5m de diámetro. Para dimensionar espacios, medí 5, 10, 15 o 20 metros lineales en una plaza o cancha formando un cuadrado, y analizá qué entra en esa área.</p>
+        </div>
+
+        <p>Los <strong>dos listados</strong> son parte fundamental del plano —pueden ir en la misma lámina o adjuntos— y evitan equivocaciones al momento de comprar:</p>
+
+        <ul class="checklist">
+          <li><strong>Listado de especies</strong> — como mínimo el símbolo o código usado y el nombre científico. Conviene sumar nombre común, altura máxima y mínima de implantación, floración y fructificación, observaciones y cantidad</li>
+          <li><strong>Listado de materiales extra-vegetales</strong> — con las especificaciones técnicas para su compra y aplicación: material, medidas, características, empleo, observaciones y cantidad</li>
+        </ul>
+
+        <div class="note-card">
+          <p><strong>Una imagen para pensar:</strong> en Japón, cuando hacen una plaza, primero plantan únicamente el césped. Dejan que la gente circule y marque sus caminos, sus rutas preferidas, sus atajos. Recién después crean el diseño — una buena manera de definir las circulaciones y sectorizar un espacio público.</p>
+        </div>
+      </section>
+
+      <footer class="content__footer">
+        <p>Resumen elaborado a partir de: Curso de Diseño de Jardines, Módulo V — Proceso Creativo: el Diseño y su Presentación (Educación a Distancia, Círculo Agrónomos de Buenos Aires — Docente: Elena Soboleff).</p>
+      </footer>
+
+      </div>
+      <!-- FIN módulo V -->
+
+      <div class="module-content" data-module-content="6" hidden>
+
+      <header class="content__intro">
+        <p class="content__kicker">Guía de estudio · Módulo VI</p>
+        <h2 class="content__title">Representación gráfica en un plano de paisajismo</h2>
+        <p class="content__lede">Cuando representamos un jardín en un plano lo importante es transmitir una idea, no ser realistas. El objetivo no es hacer una pintura: es que se identifiquen las masas de plantas, que se distingan las especies y se lea la diversidad.</p>
+      </header>
+
+      <!-- LÁMINA 01 (Módulo VI) -->
+      <section class="lamina" id="s35" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 01 / 07</span>
+          <h3>Transmitir una idea, no ser realista</h3>
+        </div>
+
+        <p>Para diferenciar especies usamos distintas representaciones gráficas, además de espesores de línea y colores. Los <strong>grafismos</strong> ayudan a identificar el espacio final que ocuparán árboles, macizos y canteros, y facilitan la lectura entre caducas y perennes, latifoliadas y coníferas.</p>
+
+        <p>Se puede trabajar a color o en blanco y negro. Los grafismos para presentación al cliente serán más elaborados y detallados que los de un plano técnico — como el plano de plantación, el de riego, el de iluminación o el de drenajes y movimientos de tierra.</p>
+
+        <div class="note-card note-card--field">
+          <p><strong>Criterio de escala:</strong> cada especie se representa con el tamaño en escala de su desarrollo adulto, o del tamaño total que queremos que ocupe si la vamos a mantener controlada con podas. Solo las plantas que admiten control por poda pueden dibujarse más chicas que su tamaño esperado — y siempre con sentido común: un ombú jamás entrará en un jardín de 6m² (salvo que nos gusten los bonsái). Recordemos que aunque podemos la parte aérea, el sistema radicular sigue creciendo y puede traer problemas futuros.</p>
+        </div>
+      </section>
+
+      <!-- LÁMINA 02 (Módulo VI) -->
+      <section class="lamina" id="s36" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 02 / 07</span>
+          <h3>El plano de presentación</h3>
+        </div>
+
+        <p>A veces caemos en la tentación de mostrar todos los colores y todas las floraciones en un solo plano. <strong>Eso es un error</strong>: las floraciones no ocurren todas simultáneamente, y mostrarlas juntas crea la ilusión de un jardín multicolor que nunca se hará realidad. Si el color es el hilo conductor del diseño, lo correcto es hacer como mínimo un plano por época del año — y aun así, no todas las flores de primavera tienen su auge a la vez.</p>
+
+        <p>Sobrecargar un plano de colores, aunque sean simultáneos, también dificulta su lectura y marea. Fotos que acompañen el plano expresan mejor el esplendor de las especies elegidas.</p>
+
+        <p>Un plano de presentación debe:</p>
+
+        <ul class="checklist">
+          <li>Estar dibujado en una escala que muestre todos los aspectos necesarios para entender la propuesta</li>
+          <li>Indicar el norte y la escala</li>
+          <li>Contener nombre del cliente y dirección del espacio a intervenir</li>
+          <li>Incluir nombre y formas de contacto del diseñador</li>
+          <li>Traer el listado de recursos vegetales y el de materiales extra-vegetales</li>
+          <li>Tener leyenda con la simbología o los códigos empleados</li>
+          <li>Sumar fotos o ilustraciones de las plantas</li>
+          <li>Acompañarse de láminas adicionales: detalles en escala, croquis, fotomontajes y elevaciones (cortes o vistas)</li>
+          <li>Cerrar con un memorial descriptivo: breve descripción del proyecto</li>
+        </ul>
+
+        <div class="note-card">
+          <p>Un plano coloreado a mano es más cálido y transmite mejor la idea a un cliente sin tanto poder de abstracción.</p>
+        </div>
+      </section>
+
+      <!-- LÁMINA 03 (Módulo VI) -->
+      <section class="lamina" id="s37" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 03 / 07</span>
+          <h3>El plano de plantación</h3>
+        </div>
+
+        <p>Este plano lo interpretan profesionales del rubro, así que no necesita los adornos que ayudan a un cliente a entender la propuesta. Al ser un plano técnico debe:</p>
+
+        <ul class="checklist">
+          <li>Usar una representación gráfica más limpia</li>
+          <li>Incluir cotas de referencia, como las distancias de plantación</li>
+          <li>Detallar los esquemas de plantación</li>
+          <li>Detallar el preparo del suelo</li>
+          <li>Detallar las instalaciones</li>
+          <li>Contener un memorial descriptivo con detalles técnicos, terminaciones y demás información para la implantación</li>
+        </ul>
+
+        <div class="note-card note-card--field">
+          <p><strong>Por qué se simplifica:</strong> en un plano de plantación no importa que todos los árboles se representen igual —un círculo con una X indicando el tronco— porque se diferencian por los códigos aclarados en la tabla. Se hace así porque estos planos traen otra información encima (distancias de plantación, cañerías, redes eléctricas enterradas, drenajes, instrucciones de plantación) y los grafismos complejos dificultarían su lectura.</p>
+        </div>
+      </section>
+
+      <!-- LÁMINA 04 (Módulo VI) -->
+      <section class="lamina" id="s38" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 04 / 07</span>
+          <h3>Grafismos de los recursos vegetales</h3>
+        </div>
+
+        <p>Un grafismo no necesita ser realista: no buscamos identificar la especie mirando su símbolo. Para eso está la tabla de especies o la leyenda. De hecho, <strong>un mismo grafismo puede representar una especie arbórea en un proyecto y, alterando su escala, un arbusto o una herbácea en otro</strong>.</p>
+
+        <p>La regla es: un grafismo por especie, repetido cada vez que esa especie aparece en el proyecto. La excepción son los cubresuelos, que ocupan áreas extensas — ahí se usa un color o una textura para rellenar el área, y después se especifica cuántos plantines por metro cuadrado.</p>
+
+        <figure class="plate">
+          <img src="img/mod6-grafismos-simples.jpg" alt="Lámina a mano con grafismos básicos: palmera, árbol y conífera en planta, secuencias de una misma especie y proyección de copas superpuestas" loading="lazy">
+          <figcaption><span>Fig. 01</span> Convenciones básicas: siempre se indica el tronco, y la escala revela si es árbol, arbusto o herbácea</figcaption>
+        </figure>
+
+        <ul class="checklist">
+          <li><strong>Siempre se indica el tronco</strong> — con una X o un punto en el centro de la copa</li>
+          <li><strong>Palmera</strong> — círculo dividido en gajos; <strong>conífera</strong> — círculo de contorno aserrado</li>
+          <li><strong>Secuencia de una misma especie</strong> — el mismo grafismo repetido; si las copas se superponen, se dibuja el solapamiento (por ejemplo, al diseñar un cerco vivo)</li>
+          <li><strong>Proyección de copas</strong> — la copa superior se dibuja con línea punteada para dejar ver lo que hay debajo: especies inferiores y cubresuelos</li>
+        </ul>
+
+        <figure class="plate">
+          <img src="img/mod6-arboles-planta.jpg" alt="Lámina con veinte grafismos distintos de árboles vistos en planta" loading="lazy">
+          <figcaption><span>Fig. 02</span> Repertorio de grafismos de árboles en planta para planos de presentación</figcaption>
+        </figure>
+      </section>
+
+      <!-- LÁMINA 05 (Módulo VI) -->
+      <section class="lamina" id="s39" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 05 / 07</span>
+          <h3>Caducas, perennes y coníferas</h3>
+        </div>
+
+        <p>La convención general para diferenciar tipos de follaje:</p>
+
+        <ul class="legend">
+          <li><span class="legend__swatch legend__swatch--a" aria-hidden="true"></span><div><strong>Latifoliadas caducifolias</strong> — se representan mostrando su estructura, las ramas.</div></li>
+          <li><span class="legend__swatch legend__swatch--b" aria-hidden="true"></span><div><strong>Latifoliadas perennes</strong> — se representan mostrando la forma de su copa, la masa de follaje.</div></li>
+          <li><span class="legend__swatch legend__swatch--c" aria-hidden="true"></span><div><strong>Coníferas</strong> — se representan con líneas más duras.</div></li>
+        </ul>
+
+        <figure class="plate">
+          <img src="img/mod6-tipos-follaje.jpg" alt="Grilla de grafismos con círculos de color señalando cuáles corresponden a latifoliadas caducifolias, perennes y coníferas" loading="lazy">
+          <figcaption><span>Fig. 03</span> Los mismos grafismos clasificados según el tipo de planta que representan</figcaption>
+        </figure>
+
+        <figure class="plate">
+          <img src="img/mod6-elevaciones-arboles.jpg" alt="Seis grafismos de árboles dibujados en elevación, de perfil, mostrando tronco y copa" loading="lazy">
+          <figcaption><span>Fig. 04</span> Grafismos en elevación — permiten apreciar la altura y se usan al dibujar cortes o vistas</figcaption>
+        </figure>
+      </section>
+
+      <!-- LÁMINA 06 (Módulo VI) -->
+      <section class="lamina" id="s40" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 06 / 07</span>
+          <h3>Simbología de equipamientos e instalaciones</h3>
+        </div>
+
+        <p>En arquitectura hay diversas convenciones para representar determinados elementos. No es necesario conocerlas todas, pero sí saber qué representan <strong>puertas y ventanas</strong>.</p>
+
+        <div class="note-card note-card--field">
+          <p><strong>La clave para leerlos:</strong> los símbolos son mayormente cómo vemos los elementos desde arriba — su proyección. Una puerta, por ejemplo, se dibuja con el arco que describe su hoja al abrirse.</p>
+        </div>
+
+        <figure class="plate">
+          <img src="img/mod6-simbologia.jpg" alt="Grilla de dieciséis símbolos arquitectónicos vistos en planta: camas, mesas, sillones, bañera, inodoro, bacha y cocina" loading="lazy">
+          <figcaption><span>Fig. 05</span> Símbolos de equipamiento vistos en planta — la proyección desde arriba</figcaption>
+        </figure>
+      </section>
+
+      <!-- LÁMINA 07 (Módulo VI) -->
+      <section class="lamina" id="s41" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 07 / 07</span>
+          <h3>Color y escala de grises · Anotaciones que no deben faltar</h3>
+        </div>
+
+        <p>Un mismo diseño puede presentarse en blanco y negro o en color. El monocromático puede ser el indicado para un diseño minimalista y moderno; el coloreado es más amigable y transmite mejor la idea a quien no está acostumbrado a leer planos.</p>
+
+        <figure class="plate plate--pair">
+          <div class="plate__item">
+            <img src="img/mod6-plano-bn.jpg" alt="Plano de paisajismo en blanco y negro con su corte, dibujado a tinta con grafismos detallados" loading="lazy">
+            <figcaption><span>Fig. 06</span> El mismo diseño en blanco y negro — planta y corte AA</figcaption>
+          </div>
+          <div class="plate__item">
+            <img src="img/mod6-plano-color.jpg" alt="El mismo plano de paisajismo coloreado a lápiz, con su corte correspondiente" loading="lazy">
+            <figcaption><span>Fig. 07</span> El mismo diseño coloreado a mano</figcaption>
+          </div>
+        </figure>
+
+        <p>Datos mínimos de identificación que todo plano debe presentar:</p>
+
+        <ol class="stages">
+          <li><span>01</span>Rótulo: escala, norte, nombre del paisajista y del dibujante, logotipo, formas de contacto, nombre del cliente, dirección, fecha y numeración de láminas</li>
+          <li><span>02</span>Listado de especies</li>
+          <li><span>03</span>Listado de materiales extra-vegetales</li>
+        </ol>
+      </section>
+
+      <footer class="content__footer">
+        <p>Resumen elaborado a partir de: Curso de Diseño de Jardines, Módulo VI — Representación Gráfica en un Plano de Paisajismo (Educación a Distancia, Círculo Agrónomos de Buenos Aires — Docente: Elena Soboleff).</p>
+      </footer>
+
+      </div>
+      <!-- FIN módulo VI -->
+
+      <div class="module-content" data-module-content="7" hidden>
+
+      <header class="content__intro">
+        <p class="content__kicker">Guía de estudio · Módulo VII</p>
+        <h2 class="content__title">Costos y presupuestos</h2>
+        <p class="content__lede">«¿Cuánto cuesta un jardín?» La respuesta de los paisajistas suele ser siempre la misma: depende. Este módulo desarma ese "depende" en una lista de costos concretos, y explica cómo cobrar el diseño y presupuestar la implantación.</p>
+      </header>
+
+      <!-- LÁMINA 01 (Módulo VII) -->
+      <section class="lamina" id="s42" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 01 / 08</span>
+          <h3>¿Cuánto cuesta un jardín?</h3>
+        </div>
+
+        <p>Lo que más dificulta dar una respuesta es que el paisajismo es una <strong>obra de arte</strong>, y por eso es muy difícil determinar su valor. Depende del nombre que tenga el diseñador, de su experiencia, del estilo, de la sensibilidad artística. Y también de los materiales, del tamaño de las plantas, de la dificultad de acceso al lugar, del transporte, de los fletes y de la posibilidad de conseguir mano de obra especializada.</p>
+
+        <p>Para calcular el costo hay que tener en cuenta:</p>
+
+        <ul class="checklist">
+          <li>El <strong>costo del proyecto</strong> (diseño): el poder creativo del diseñador y su experiencia</li>
+          <li>Los <strong>recursos vegetales</strong>, que varían mucho según el tamaño de planta elegido para obtener un primer efecto</li>
+          <li>Los <strong>insumos</strong>: tierra, compost, perlita, arena, resaca de río, turba, fertilizantes y mejoradores del suelo</li>
+          <li>Los <strong>materiales extra-vegetales</strong></li>
+          <li>Los <strong>traslados</strong> del diseñador y del equipo: combustible, peajes, desgaste de vehículos, cánones de barrios cerrados</li>
+          <li>Los <strong>fletes</strong>, que se encarecen si el acceso es difícil o hay límites al tamaño del camión</li>
+          <li>La <strong>hora-hombre</strong>: mano de obra y dirección de obra</li>
+          <li>Alimentación, seguros y equipamiento de seguridad del equipo (guantes, botas, cascos)</li>
+          <li>Los <strong>días no laborables por clima</strong> que retrasan la implantación</li>
+          <li>El <strong>preparo del espacio</strong>: no es lo mismo recibir el terreno limpio que tener que sacar volquetes de material</li>
+          <li>Equipamiento alquilado (andamios, tractores) y volquetes</li>
+          <li>La <strong>calidad del suelo</strong>: define cuánto costará mejorarlo, y si se podrá trabajar a mano o hará falta maquinaria</li>
+          <li>Imprevistos como la rotura de una cañería, impuestos y tasas</li>
+          <li><strong>Costos indirectos</strong> del estudio (luz, alquiler), aplicando un porcentual según el tiempo dedicado al proyecto</li>
+        </ul>
+
+        <div class="note-card note-card--field">
+          <p><strong>Dato de plazo:</strong> un jardín mediano a grande con árboles lleva entre <strong>10 y 20 años</strong> en consolidarse. Ese es el horizonte real cuando se elige el tamaño de las plantas iniciales.</p>
+        </div>
+      </section>
+
+      <!-- LÁMINA 02 (Módulo VII) -->
+      <section class="lamina" id="s43" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 02 / 08</span>
+          <h3>Los costos ocultos: el tiempo</h3>
+        </div>
+
+        <p>Hay aspectos que generalmente obviamos porque son indirectos, y que inciden en <strong>el tiempo que lleva el trabajo</strong> más que en la compra de cualquier ítem:</p>
+
+        <ul class="legend">
+          <li><span class="legend__swatch legend__swatch--a" aria-hidden="true"></span><div><strong>Accesos internos</strong> — ancho de puertas y pasillos, desniveles, escaleras. A veces se descarga el camión a pocos metros de donde se usará el material; otras hay que mover todo con carretillas, a mano, o incluso contratar una grúa que lo pase por arriba de la edificación.</div></li>
+          <li><span class="legend__swatch legend__swatch--b" aria-hidden="true"></span><div><strong>Topografía</strong> — los desniveles consumen tiempo y energía.</div></li>
+          <li><span class="legend__swatch legend__swatch--c" aria-hidden="true"></span><div><strong>Retirada de materiales</strong> — otra vez importan los accesos: ¿los volquetes se pueden poner cerca, o habrá que llenarlos con carretillas o manualmente?</div></li>
+        </ul>
+
+        <p>Por eso el costo de un jardín se divide en, como mínimo, dos partes:</p>
+
+        <ol class="stages">
+          <li><span>01</span>El diseño (o proyecto): honorarios</li>
+          <li><span>02</span>La implantación (o ejecución)</li>
+          <li><span>03</span>Seguimiento y mantenimiento — un tercer presupuesto a ofrecer</li>
+        </ol>
+      </section>
+
+      <!-- LÁMINA 03 (Módulo VII) -->
+      <section class="lamina" id="s44" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 03 / 08</span>
+          <h3>Margen de seguridad y ganancia</h3>
+        </div>
+
+        <p>Al total de los costos de implantación conviene agregar un porcentaje como <strong>margen de seguridad</strong>. Así se puede reponer una planta que se dañó en la obra o que no enraizó, absorber un leve aumento de precios, o reparar una cañería que rompimos al palear.</p>
+
+        <div class="note-card note-card--field">
+          <p><strong>Regla del césped:</strong> conviene calcular un <strong>10% más</strong> por los panes que se rompen durante la obra y por los recortes necesarios para ajustar al diseño de caminos y canteros — sobre todo si sus formas son orgánicas. Lo geométrico permite mejor armado y reaprovechamiento.</p>
+        </div>
+
+        <p>La <strong>ganancia</strong> es el total cobrado menos los costos directos e indirectos. Si todo sale como se planeó y no hizo falta usar el margen de seguridad, la ganancia será más alta — y corresponde compartir ese extra con los trabajadores: sin su profesionalismo y su falta de errores, eso no habría ocurrido.</p>
+
+        <p>Generalmente se calcula un <strong>20 a 30% de ganancia</strong> sobre el total del costo para cerrar el presupuesto final que se envía al cliente.</p>
+
+        <blockquote class="note-card">
+          <p>Cuando un presupuesto de paisajismo pierde frente a otros únicamente por el precio —siempre que las demás ofertas se basen en los mismos parámetros de implantación— es mejor tomar esa derrota como victoria: alguien saldrá perjudicado por una propuesta engañosa.</p>
+        </blockquote>
+      </section>
+
+      <!-- LÁMINA 04 (Módulo VII) -->
+      <section class="lamina" id="s45" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 04 / 08</span>
+          <h3>Honorarios: siempre cobrar el diseño</h3>
+        </div>
+
+        <p>Aunque tengamos poca o ninguna experiencia, aunque cobremos apenas lo suficiente para trasladarnos al espacio y pagar el estacionamiento del día de la entrevista, <strong>siempre hay que cobrar por el diseño</strong>. Diseñar lleva muchas horas, mucho estudio, mucho tiempo dedicado a observar, a buscar soluciones y a debatir internamente cuáles son las especies más indicadas.</p>
+
+        <p>Una vez aprobado el proyecto, el cliente dispone de una copia con los listados de plantas y materiales, indicaciones de plantación y descripciones. Con ese material puede contratarnos para la implantación, cotizar con otras empresas, hacerlo por etapas o hasta hacerlo personalmente. Si no cobramos por diseñar, cabe la posibilidad de que no cobremos nada y el cliente se quede con un diseño gratuito.</p>
+
+        <div class="note-card">
+          <p>Un médico cobra la consulta, un arquitecto o un ingeniero cobran por dibujar planos, un abogado también es remunerado por asesorarnos. A veces cuesta que los clientes entiendan por qué cobramos el proyecto, pero tenemos argumentos para hacerlo.</p>
+        </div>
+
+        <p>Tres reflexiones para fijar el valor de la hora:</p>
+
+        <ul class="checklist">
+          <li>¿Cuánto vale nuestra hora en el empleo actual? Nadie que reemplace una actividad laboral por otra más placentera quiere terminar el mes con un sueldo más bajo — ahí hay una buena referencia</li>
+          <li>Al ser nuestros propios jefes no tendremos aguinaldo: eso hay que cobrarlo mes a mes</li>
+          <li>Dividir lo que quiero percibir a fin de mes por la cantidad de horas que dedicaré a la actividad (normalmente 44 horas semanales, <strong>176 horas por mes</strong>)</li>
+        </ul>
+
+        <div class="note-card note-card--field">
+          <p><strong>Fórmula para definir honorarios según el tamaño del proyecto:</strong></p>
+          <p class="formula">H = X + Y × A</p>
+          <p><strong>H</strong> = honorarios · <strong>X</strong> = valor mínimo que queremos cobrar por cualquier proyecto (sin el cual no rinde ni ir a la visita) · <strong>Y</strong> = índice multiplicador en $ · <strong>A</strong> = área a intervenir.</p>
+          <p>Da un valor con una parte fija y otra variable. Normalmente el resultado es bastante elevado, lo que permite negociar un descuento a favor del cliente.</p>
+        </div>
+
+        <p>Otra manera es estimar la cantidad de horas que dedicaremos al proyecto y multiplicarla por el valor de nuestra hora.</p>
+
+        <div class="note-card">
+          <p><strong>Forma de pago recomendada:</strong> no empezar a trabajar —no "levantar el lápiz"— sin cobrar antes el <strong>50% del valor del diseño</strong>. El 50% restante se abona en la forma a convenir, normalmente al recibir la copia del proyecto aprobado. Si después nos contratan para la implantación, se puede ofrecer un descuento en la dirección de obra.</p>
+        </div>
+      </section>
+
+      <!-- LÁMINA 05 (Módulo VII) -->
+      <section class="lamina" id="s46" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 05 / 08</span>
+          <h3>Estimar sin proyecto: las categorías de costo</h3>
+        </div>
+
+        <p>Es lógico que el cliente quiera saber cuánto le costará su jardín, y también es coherente que nosotros preguntemos cuánto quiere invertir — pero es difícil obtener respuesta, porque el cliente no suele tener idea de lo que cuestan las plantas y los demás ítems.</p>
+
+        <p>Para estimar sin haber hecho el proyecto hay que conocer bien el costo de plantas y materiales de diversas calidades, y evaluar correctamente qué calidad pretende el cliente. No cuesta lo mismo delimitar canteros con durmientes, flejes de acero, ladrillo o troncos obtenidos de podas del mismo jardín; ni plantar un árbol adulto de 7m que una muda finita de 2m.</p>
+
+        <div class="note-card note-card--field">
+          <p><strong>Cómo leer al cliente:</strong> observar su casa, cómo la decora, los materiales utilizados, si tiene obras de arte, qué tipo de ropa usa. Eso da una referencia confiable de sus preferencias y del nivel de jardín que pretende, más allá de lo que se releve en la entrevista.</p>
+        </div>
+
+        <p>Con eso en mente se evalúa la categoría de costo del cliente y se estima el costo por metro cuadrado implantado. Conviene armar una tabla personal que conozcamos a fondo:</p>
+
+        <div class="table-wrap">
+          <table class="sun-table">
+            <thead>
+              <tr><th>Cat.</th><th>Descripción</th><th>Costo por m² (implantación, sin diseño)</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td>Plantines chicos, los más chicos que se consiguen según cada especie; requiere más tiempo de desarrollo. Materiales baratos: mampostería pintada, madera poco noble como pino, plafones de plástico, sin riego automatizado</td><td>Desde $ X</td></tr>
+              <tr><td>2</td><td>Sube gradualmente el tamaño de las plantas y la calidad de los materiales</td><td>Desde $ XX</td></tr>
+              <tr><td>3</td><td>Sube gradualmente el tamaño de las plantas y la calidad de los materiales</td><td>Desde $ XXX</td></tr>
+              <tr><td>4</td><td>Sube gradualmente el tamaño de las plantas y la calidad de los materiales</td><td>Desde $ XXXX</td></tr>
+              <tr><td>5</td><td>Plantines en su máximo tamaño de mercado, árboles adultos (requieren camión con munk y tutoramiento acorde), riego automatizado sectorizado, proyecto de iluminación artística, materiales nobles: maderas duras, flejes de acero corten, granitos</td><td>Desde $ XXXXX</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- LÁMINA 06 (Módulo VII) -->
+      <section class="lamina" id="s47" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 06 / 08</span>
+          <h3>Contar circulitos: el plano de plantación</h3>
+        </div>
+
+        <p>Para lograr un presupuesto acertado necesitamos un buen <strong>plano de plantación</strong> del que podamos extraer la cantidad en unidades de cada especie. Presupuestar es, literalmente, <strong>"contar circulitos"</strong>: sabiendo que en el plano cada especie está representada con el espacio que efectivamente va a ocupar, contamos cuántas unidades de cada una necesitamos.</p>
+
+        <figure class="plate">
+          <img src="img/mod7-plano-plantacion.jpg" alt="Plano de plantación técnico con especies numeradas por código, distintos grafismos para solados, césped y techos, piscina a la izquierda y dos jardines internos" loading="lazy">
+          <figcaption><span>Fig. 01</span> Plano de plantación: cada código se explica en una tabla que permite hacer el presupuesto</figcaption>
+        </figure>
+
+        <p>En este plano los grafismos son fáciles de entender: aunque no se usaron siempre círculos iguales, la lectura es clara. Se emplean distintos grafismos para identificar solados, césped, el techo de la casa y las galerías, y se identifican con claridad las líneas que definen el formato de los canteros.</p>
+
+        <div class="note-card">
+          <p>Se optó por <strong>no poner cotas</strong> en este plano porque sería demasiada información y la lectura sería difícil — eso obliga a elaborar un segundo plano con las medidas y orientaciones, donde a su vez habrá que obviar otra información.</p>
+        </div>
+
+        <div class="note-card note-card--field">
+          <p><strong>Ojo con el excedente:</strong> para obtener mejor efecto visual inicial se puede optar por plantar más plantines de los necesarios para llenar un cantero, y con el tiempo ir retirando las plantas "que sobran" para que las demás crezcan ocupando su espacio real. Es decir: en el presupuesto inicial de implantación hay que calcular <strong>más plantines de los que están representados en el plano</strong>.</p>
+        </div>
+      </section>
+
+      <!-- LÁMINA 07 (Módulo VII) -->
+      <section class="lamina" id="s48" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 07 / 08</span>
+          <h3>Las tres tablas de cotización</h3>
+        </div>
+
+        <p>La <strong>tabla de especies</strong> se lleva al vivero para cotizar (conviene encabezarla con el nombre del vivero y la fecha):</p>
+
+        <div class="table-wrap">
+          <table class="sun-table">
+            <thead>
+              <tr><th>Código</th><th>Cant.</th><th>Nombre científico</th><th>Nombre común</th><th>Altura / maceta</th><th>Costo unit.</th><th>Costo total</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>01</td><td>03</td><td><em>Cyca revoluta</em></td><td>Cica</td><td>1,20m</td><td>X</td><td>3 × X</td></tr>
+              <tr><td>02</td><td>26</td><td><em>Aechmea fasciata</em></td><td>Bromelia</td><td>0,70m</td><td>Y</td><td>26 × Y</td></tr>
+              <tr><td>03</td><td>15 plantines/m²</td><td><em>Callisia repens</em></td><td>Calisia</td><td>Cubresuelos, macetas M12</td><td>Z</td><td>__ × W</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="note-card">
+          <p>Para los <strong>cubresuelos</strong> hay que calcular el total de metros cuadrados que ocupan y multiplicarlos por el costo de cada plantín — generalmente se emplean los de maceta M12.</p>
+        </div>
+
+        <p>De modo similar se arman la <strong>tabla de insumos</strong> (insumo, descripción, cantidad, unidad, costo unitario y total — por ejemplo N-P-K 30-30-30 en bolsas de 1kg, o compost en bolsas de 50 litros) y la <strong>tabla de materiales extra-vegetales</strong> (macetas de barro italianas nº20 por unidad, ladrillos comunes por centenar, durmientes cortados de 0,50m por unidad).</p>
+
+        <div class="note-card note-card--field">
+          <p><strong>Por qué importa el detalle:</strong> para mantener la calidad de un proyecto es fundamental dedicarse a la correcta y detallada elaboración de los costos y presupuestos. Al recibir el flete conviene verificar que los recursos vegetales lleguen en el tamaño y la calidad previstos en el proyecto.</p>
+        </div>
+      </section>
+
+      <!-- LÁMINA 08 (Módulo VII) -->
+      <section class="lamina" id="s49" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 08 / 08</span>
+          <h3>Terceros, mano de obra y herramental</h3>
+        </div>
+
+        <p>Normalmente no realizamos todos los trabajos de un jardín personalmente: contratamos empresas especializadas para construcción de piscinas, pérgolas y decks, parrillas, albañilería, proyecto e instalación de riego automatizado, de iluminación funcional y decorativa, de obras de drenaje, planimetría y trabajos de agrimensor, e implantación de jardines verticales, huertas, xerojardines, praderas o estanques con peces.</p>
+
+        <div class="note-card note-card--field">
+          <p><strong>Criterio de contratación:</strong> hay que conocer bien a quienes contratamos, porque a la vista del cliente los estamos recomendando. Conviene cotizar con <strong>al menos 3 proveedores</strong>.</p>
+        </div>
+
+        <p>Para la mano de obra y el herramental hay tres caminos: tener herramientas y empleados propios, contratar por obra, o subcontratar toda la ejecución a una empresa con empleados capacitados, supervisores, vehículos, herramientas y máquinas.</p>
+
+        <ul class="legend">
+          <li><span class="legend__swatch legend__swatch--a" aria-hidden="true"></span><div><strong>Con equipo propio</strong> — nos toca calcular los tiempos de ejecución para presupuestar correctamente.</div></li>
+          <li><span class="legend__swatch legend__swatch--b" aria-hidden="true"></span><div><strong>Subcontratando</strong> — enviamos el plano de plantación, las tablas y las especificaciones a la empresa, y esta presupuesta el total haciéndose cargo incluso de considerar los días no laborables.</div></li>
+        </ul>
+      </section>
+
+      <footer class="content__footer">
+        <p>Resumen elaborado a partir de: Curso de Diseño de Jardines, Módulo VII — Costos y Presupuestos (Educación a Distancia, Círculo Agrónomos de Buenos Aires — Docente: Elena Soboleff).</p>
+      </footer>
+
+      </div>
+      <!-- FIN módulo VII -->
+
+      <div class="module-content" data-module-content="8" hidden>
+
+      <header class="content__intro">
+        <p class="content__kicker">Guía de estudio · Módulo VIII</p>
+        <h2 class="content__title">Ejecución, entrega y mantenimiento</h2>
+        <p class="content__lede">El último tramo: pasar el proyecto del papel a la realidad. Un cronograma de trabajo ordena las operaciones en una secuencia racional, aprovecha mejor el tiempo y deja un proyecto claro para quienes deban ejecutarlo y supervisarlo.</p>
+      </header>
+
+      <!-- LÁMINA 01 (Módulo VIII) -->
+      <section class="lamina" id="s50" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 01 / 11</span>
+          <h3>Cuándo empezar: el jardín va último</h3>
+        </div>
+
+        <p>La implantación del paisajismo debe suceder <strong>cuando se termine toda la obra y pintura</strong> de la casa, quincho, piscina, pérgolas, solados y demás construcciones previstas.</p>
+
+        <p>Distintos equipos de trabajo suelen molestarse mutuamente: están en el camino, cada uno necesita espacio para lo suyo, ensucian lo que acabamos de limpiar, compactan el suelo que preparamos, rompen plantas. Y no lo hacen a propósito — necesitan la libertad de moverse y trabajar, y muchas veces no se dan cuenta de lo que sucede alrededor.</p>
+
+        <div class="note-card note-card--field">
+          <p><strong>Antes de empezar:</strong> esperar a que todos se retiren y chequear que hayan llevado sus materiales, escombros y restos de pintura. Eventualmente quedarán elementos que nos pueden servir, como tablones.</p>
+        </div>
+      </section>
+
+      <!-- LÁMINA 02 (Módulo VIII) -->
+      <section class="lamina" id="s51" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 02 / 11</span>
+          <h3>Las 13 etapas de ejecución</h3>
+        </div>
+
+        <p>El proyecto se divide en tareas y sub-obras que siguen una secuencia lógica. Algunas pueden hacerse en paralelo si el espacio lo permite — no siempre es posible coordinar varios equipos a la vez por limitaciones físicas. La secuencia que suele funcionar bien:</p>
+
+        <ol class="stages">
+          <li><span>01</span>Preparo del espacio: limpieza, desmalezamiento, picado, desterronamiento, remoción de piedras y escombros, corrección de pH, mejoradores del suelo y nivelación</li>
+          <li><span>02</span>Instalación del proyecto de riego</li>
+          <li><span>03</span>Instalación del proyecto de iluminación</li>
+          <li><span>04</span>Recepción de plantas, insumos y materiales extra-vegetales</li>
+          <li><span>05</span>Replanteo del diseño</li>
+          <li><span>06</span>Apertura de zanjas y pozos (o cunas) y ajustes de nivelado</li>
+          <li><span>07</span>Plantación propiamente dicha</li>
+          <li><span>08</span>Tutoramiento</li>
+          <li><span>09</span>Plantación y ubicación de macetas</li>
+          <li><span>10</span>Riego inicial</li>
+          <li><span>11</span>Repaso</li>
+          <li><span>12</span>Limpieza</li>
+          <li><span>13</span>Entrega del jardín</li>
+        </ol>
+
+        <div class="note-card">
+          <p><strong>Por qué los mejoradores van al principio:</strong> necesitan como mínimo <strong>2 o 3 días de descanso</strong> para incorporarse al suelo. Esa ventana se aprovecha para instalar riego e iluminación.</p>
+        </div>
+
+        <p>Durante el riego y la iluminación conviene circular sobre <strong>tablones</strong>, para no compactar el suelo ya preparado y generar menos barro y suciedad en las edificaciones.</p>
+
+        <div class="note-card note-card--field">
+          <p><strong>Recepción <em>just in time</em>:</strong> la entrega debe estar coordinada para que ocurra en el tiempo justo. Lo que llega antes ocupa espacio, dificulta el preparo del área y hay que cuidarlo — las plantas necesitan riego, un espacio de espera adecuado (sombra, sol, protección del viento) y protección para no dañarse.</p>
+        </div>
+
+        <p>En el <strong>replanteo</strong> se ubican árboles, arbustos y masas, y se delimitan canteros con estacas, hilos, mangueras, sogas, sprays atóxicos, arena o banderines. Después se apoyan las plantas en su lugar previsto para verificar espaciamientos y que no falte ni sobre nada.</p>
+
+        <div class="note-card">
+          <p>Si falta poca cantidad se pueden espaciar un poco los plantines; si sobran pocos, juntarlos un poco para aprovechar todos. Entregar un jardín con sobrantes hace sentir al cliente que estamos tirando su dinero — y casi siempre es el resultado de un planeamiento incorrecto.</p>
+        </div>
+      </section>
+
+      <!-- LÁMINA 03 (Módulo VIII) -->
+      <section class="lamina" id="s52" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 03 / 11</span>
+          <h3>Riego</h3>
+        </div>
+
+        <p>Se puede regar manualmente con mangueras, pero eso requiere compromiso del propietario: regar lleva tiempo, y el agua debe penetrar en profundidad para estimular que las raíces crezcan hacia abajo y no se formen cabelleras superficiales.</p>
+
+        <p>Lo ideal es tener <strong>plantas nativas</strong>, perfectamente adaptadas a la realidad hídrica, pluviométrica y climática local; en su defecto, exóticas compatibles; o si no, incluir riego automatizado. El automatizado ahorra mucha agua: tiene un costo inicial elevado pero se paga con el tiempo.</p>
+
+        <div class="note-card">
+          <p>En lugares con mucha escasez de agua, como California, está prohibido plantar césped en proyectos nuevos, hay incentivos fiscales para reemplazar zonas de césped por otras soluciones, y el riego es obligatorio cuando las especies tienen requerimientos incompatibles con el régimen pluviométrico local.</p>
+        </div>
+
+        <p>El riego se diseña considerando el proyecto de paisajismo, la ubicación de cada especie y su requerimiento hídrico, y el tamaño y diseño de los canteros. <strong>No hay que derrochar agua mojando caminos y paredes</strong> — no van a crecer, y encima dificulta la circulación. Para eso existen aspersores con ángulos regulables, goteros y mangueras perforadas bajo tierra.</p>
+
+        <p>Variables a definir:</p>
+
+        <ul class="checklist">
+          <li>Disponibilidad de agua (caudal y presión): ¿red, perforación, tanque dedicado, río o lago?</li>
+          <li>Especies utilizadas y sus requerimientos hídricos</li>
+          <li>Clima y régimen de lluvias</li>
+          <li>Automatización sí o no, y uso de sensores (humedad, lluvia, viento)</li>
+          <li>Sectorización</li>
+          <li>Aspersores vs. goteo vs. cañones y otros recursos</li>
+          <li>Instalación de controladores, bombas y protección — generalmente junto al equipo de la piscina</li>
+        </ul>
+
+        <div class="note-card note-card--field">
+          <p><strong>Orden correcto:</strong> el riego se instala <strong>antes de plantar</strong>, respetando el plano de plantación — no queremos cañerías justo donde abriremos pozos y zanjas. Instalarlo antes evita el sufrimiento de las plantas, el trabajo duplicado de rehacer zanjas, suciedad y demoras. Se prueba la instalación sin encharcar, o se espera el secado del suelo antes de plantar; esos tiempos van en el cronograma. La programación se testea al finalizar la plantación, aprovechando para hacer un primer riego en profundidad.</p>
+        </div>
+
+        <p>Para contratar el proyecto hay que entregar al profesional el <strong>plano de plantación con tabla de especies</strong>, para que dimensione la toma de agua, la bomba presurizadora, los diámetros de cañería, los tipos de aspersores y goteros, el sensor de lluvia, las válvulas de sectorización y el controlador.</p>
+      </section>
+
+      <!-- LÁMINA 04 (Módulo VIII) -->
+      <section class="lamina" id="s53" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 04 / 11</span>
+          <h3>Iluminación</h3>
+        </div>
+
+        <p>Más allá de permitir circular de noche viendo dónde pisamos, usar los espacios exteriores sin luz natural y evitar que se esconda gente indeseada, el proyecto de iluminación busca <strong>lograr efectos artísticos</strong> y resaltar puntos focales y plantas, ambientando el jardín para el disfrute nocturno.</p>
+
+        <blockquote class="note-card">
+          <p>Un jardín sin adecuada iluminación desaparece por la noche, achicando la casa. Parecería que la casa termina en la ventana.</p>
+        </blockquote>
+
+        <p>Son muchos los artefactos a considerar —plafones, reflectores, tipos de lámpara, colores, intensidades, resistencia a lluvia y riego, fijaciones, calidad de cableado, enchufes, cajas de control, sectorización, circuitos, llaves térmicas— por lo que lo indicado es contratar a un profesional especializado en iluminación de exteriores.</p>
+
+        <div class="note-card note-card--field">
+          <p><strong>Secuencia:</strong> conviene preparar la iluminación <strong>después del riego</strong>. A veces se hacen ambos en paralelo aprovechando las zanjas, pero con instalaciones adecuadamente aisladas una de otra. Se coloca el cableado, las conexiones, las llaves y los enchufes, y se deja la colocación de los artefactos en sí —reflectores, plafones— <strong>para el final, después de la plantación</strong>: son delicados (un golpe los rompe de forma irreparable) y caros.</p>
+        </div>
+      </section>
+
+      <!-- LÁMINA 05 (Módulo VIII) -->
+      <section class="lamina" id="s54" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 05 / 11</span>
+          <h3>Orden de plantación: de mayor a menor</h3>
+        </div>
+
+        <p>Se trabaja <strong>de mayor a menor</strong> — recordando que las plantas más altas van atrás en los canteros o contra las paredes, les siguen las de mediana altura y se termina con las más bajas. El orden es: árboles → arbustos → herbáceas → cubresuelos → césped.</p>
+
+        <p>Empezamos por los <strong>árboles</strong> porque:</p>
+
+        <ul class="checklist">
+          <li>Su ubicación es clave para orientar todo el diseño: siempre serán la referencia para ubicar masas y canteros</li>
+          <li>Son más grandes y cuesta más entrarlos, y son más frágiles — si los rompemos pueden quedar deformes, y no siempre se resuelve con podas de formación</li>
+          <li>Requieren un correcto tutoramiento, y necesitamos espacio para movernos y poder realizarlo</li>
+        </ul>
+
+        <p>Siguen los <strong>arbustos</strong>, que a veces son igual de grandes o más voluminosos que los árboles, pero al ser multipodales no sufren tanto ante una rotura o desgarro. Si van plantados delante de árboles hay que planear que su tamaño no los tape visualmente.</p>
+
+        <p>Luego las <strong>herbáceas</strong> (primero las macetas más grandes), después los cubresuelos no pisoteables, las terminaciones de canteros y borduras, y al final el <strong>césped</strong>.</p>
+
+        <div class="note-card">
+          <p>Las <strong>macetas</strong> pueden plantarse en cualquier etapa del trabajo, siempre que no queden en el camino y puedan moverse después a su lugar definitivo.</p>
+        </div>
+
+        <figure class="plate">
+          <img src="img/mod8-alternativas-arboles.jpg" alt="Esquema comparando árbol aislado, agrupación, macizo y alineación, representados en planta arriba y en alzada abajo" loading="lazy">
+          <figcaption><span>Fig. 01</span> Alternativas en la plantación de árboles: aislado, agrupación, macizo y alineación — en planta y en alzada</figcaption>
+        </figure>
+      </section>
+
+      <!-- LÁMINA 06 (Módulo VIII) -->
+      <section class="lamina" id="s55" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 06 / 11</span>
+          <h3>Cronogramas de obra</h3>
+        </div>
+
+        <p>El <strong>cronograma general</strong> ordena las tres grandes fases con sus fechas:</p>
+
+        <div class="table-wrap">
+          <table class="sun-table">
+            <thead>
+              <tr><th>Fase</th><th>Tareas</th><th>Fechas del ejemplo</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Preliminares</td><td>Limpieza · Desterronado · Nivelación · Fertilización</td><td>20/03 al 23/03</td></tr>
+              <tr><td>Plantación</td><td>Árboles · Arbustos · Herbáceas y cubresuelos · Césped</td><td>01/04 al 06/04</td></tr>
+              <tr><td>Posteriores</td><td>Entrega · Seguimiento</td><td>08/04 y 27/05</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>El <strong>cronograma detallado</strong> agrega, por tarea: inicio, final, tiempo en horas, mano de obra (cantidad de peones y supervisores), costo y herramientas o máquinas necesarias. Por ejemplo, la limpieza son 8h con 6 peones y 1 supervisor, usando carretillas, palas y motoguadaña; la plantación y riego son 44h con 5 peones y 1 supervisor.</p>
+
+        <div class="note-card note-card--field">
+          <p><strong>Tres detalles del ejemplo que vale copiar:</strong> cuantificar peones y supervisores facilita presupuestar y contratar; cuando una tarea libera peones, se los puede trasladar a otra obra o tarea en paralelo; y la entrega se programa un <strong>lunes, con luz de día y sin apuro</strong>.</p>
+        </div>
+
+        <p>Tan importante como los cronogramas de obra es el <strong>cronograma de recepción de pedidos</strong>, con pedido, cantidad, proveedor, fecha del pedido y fecha de entrega — incluso con horario, como "01/04 8am" para las plantas y "01/04 13h" para los tutores.</p>
+
+        <div class="note-card">
+          <p>La <strong>visita de seguimiento</strong> ocurre normalmente entre los 30 y 60 días de la entrega y <strong>debe ser parte del presupuesto de ejecución</strong>. Desde ese momento empieza la etapa de mantenimiento periódico, si el cliente decide contratar ese servicio.</p>
+        </div>
+      </section>
+
+      <!-- LÁMINA 07 (Módulo VIII) -->
+      <section class="lamina" id="s56" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 07 / 11</span>
+          <h3>Pozos, zanjas y rellenado</h3>
+        </div>
+
+        <p>Los pozos o zanjas para plantación deben tener, como mínimo, <strong>el doble del tamaño del terrón</strong> tanto en ancho como en profundidad. Cuanto más grande el espacio con sustrato bueno y aireado, más fácilmente agarrarán las plantas.</p>
+
+        <ul class="checklist">
+          <li>Separar la camada superior (15cm aprox.), la capa más fértil, para usarla en el fondo del pozo</li>
+          <li><strong>Árboles</strong> — 80 × 80 × 80cm</li>
+          <li><strong>Arbustos</strong> — 50 × 50 × 50cm</li>
+          <li><strong>Enredaderas</strong> — 40 × 40 × 40cm</li>
+        </ul>
+
+        <div class="note-card note-card--field">
+          <p><strong>Cuadrado vs. cilíndrico:</strong> si el pozo es cuadrado, las raíces al encontrarse con una pared perpendicular tienden a perforarla y buscar más extensión. Si es cilíndrico, tienden a hacer la curva y comportarse como si estuvieran en una maceta — lo que en algún momento frenará su crecimiento.</p>
+        </div>
+
+        <figure class="plate">
+          <img src="img/mod8-raices-contenedor.jpg" alt="Dibujo de un árbol juvenil con las raíces enrolladas sobre sí mismas por haber estado mucho tiempo en contenedor cilíndrico, señalando los cortes necesarios" loading="lazy">
+          <figcaption><span>Fig. 02</span> Raíces que se auto-ahorcan tras mucho tiempo en contenedor cilíndrico, y los cortes necesarios</figcaption>
+        </figure>
+
+        <p>Para el <strong>rellenado</strong>:</p>
+
+        <ul class="checklist">
+          <li>Usar la tierra más fértil previamente separada (los 15cm superiores, horizonte 0) en el fondo del pozo, y agregar el sustrato indicado para la especie mezclado con compost o fertilizantes cuando sea necesario</li>
+          <li>Llenar el pozo apenas lo suficiente para que el terrón apoyado quede <strong>unos 5cm más alto</strong> que el terreno, porque todo se acomodará con el riego</li>
+          <li>Apoyar el terrón y completar los espacios apisonando el sustrato para evitar grandes burbujas de aire</li>
+          <li>Al plantar árboles en terreno seco, echar <strong>un balde de agua en el fondo del pozo</strong> antes de agregar sustrato, para estimular a las raíces a buscar la profundidad</li>
+        </ul>
+      </section>
+
+      <!-- LÁMINA 08 (Módulo VIII) -->
+      <section class="lamina" id="s57" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 08 / 11</span>
+          <h3>Tutoramiento</h3>
+        </div>
+
+        <p>El tutoramiento cumple más de una función y puede realizarse por distintos métodos:</p>
+
+        <ul class="checklist">
+          <li>Evitar el movimiento de las raíces para que la planta enraíce lo más rápido posible</li>
+          <li>Evitar que se tumben las plantas, sobre todo árboles, por el viento</li>
+          <li>Enderezar una planta que creció torcida</li>
+          <li>Indicar el camino deseado a las enredaderas</li>
+          <li><strong>Protección</strong>: una planta debe ser visible para que no le pasen por encima ni la dañen al hacer podas</li>
+        </ul>
+
+        <figure class="plate">
+          <img src="img/mod8-tutoramiento.jpg" alt="Tres formas de tutorar un árbol recién plantado: con un tutor lateral, con dos tutores enfrentados y con tres cables tensados a estacas" loading="lazy">
+          <figcaption><span>Fig. 03</span> Tres maneras de tutorar un árbol recién plantado</figcaption>
+        </figure>
+
+        <div class="note-card note-card--field">
+          <p><strong>Corrección al esquema:</strong> en la figura de la derecha conviene clavar las estacas <strong>en dirección contraria</strong> a la ilustrada, para que no sean arrancadas por esos mismos cables cuando haya viento y reciban tirones — de la misma manera como se clavarían las estacas de una carpa de camping.</p>
+        </div>
+
+        <figure class="plate">
+          <img src="img/mod8-amarres.jpg" alt="Foto de árboles jóvenes tutorados en un parque y primer plano de un amarre plástico entre tronco y tutor" loading="lazy">
+          <figcaption><span>Fig. 04</span> Amarres amigables que no lastiman la corteza</figcaption>
+        </figure>
+
+        <ul class="legend">
+          <li><span class="legend__swatch legend__swatch--a" aria-hidden="true"></span><div><strong>Amarres amigables</strong> — similares a los de la imagen, o envolviendo el cable o cuerda con un pedazo de manguera, tela o arpillera.</div></li>
+          <li><span class="legend__swatch legend__swatch--b" aria-hidden="true"></span><div><strong>Nunca demasiado ajustados</strong> — deben permitir el crecimiento del tronco y ser inspeccionados periódicamente para evitar el ahorcamiento.</div></li>
+          <li><span class="legend__swatch legend__swatch--c" aria-hidden="true"></span><div><strong>Tutor más profundo que el pozo</strong> — ese sustrato suelto no ayuda a la estabilidad.</div></li>
+        </ul>
+
+        <div class="note-card">
+          <p>Es recomendable proteger el cuello de los árboles jóvenes con <strong>botellas PET cortadas</strong>, para evitar daños con bordeadoras.</p>
+        </div>
+      </section>
+
+      <!-- LÁMINA 09 (Módulo VIII) -->
+      <section class="lamina" id="s58" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 09 / 11</span>
+          <h3>Césped y riego inicial</h3>
+        </div>
+
+        <p>El <strong>césped se hace al último</strong> porque no conviene el pisoteo por un mínimo de 15 días luego de instalado (y necesita 2 a 3 semanas sin uso para enraizar correctamente).</p>
+
+        <ul class="checklist">
+          <li>Se hace sobre superficie preparada y nivelada, habiendo revuelto un mínimo de 20cm de profundidad para permitir el enraizamiento</li>
+          <li>Usar tablas para no hundirse en la tierra y evitar el pisoteo</li>
+          <li>Planear dónde empezar para no caminar sobre superficies recién plantadas: <strong>del fondo hacia la salida</strong></li>
+          <li>Tras colocar los panes, un leve riego seguido de compactación con rodillo para retocar la nivelación y eliminar el aire</li>
+          <li>Después de compactar, una fina cobertura (2cm) de tierra fértil fina para rellenar imperfecciones y juntas</li>
+          <li>¡Regar!</li>
+        </ul>
+
+        <blockquote class="note-card">
+          <p>¡Mojar no es regar! Regar es proporcionar a la planta la cantidad necesaria de agua para su desarrollo, ni más ni menos.</p>
+        </blockquote>
+
+        <p>Muchas veces creemos haber regado cuando en realidad apenas mojamos la porción más superficial de la tierra. Podemos comprobarlo <strong>clavando una estaca seca</strong> para verificar hasta qué profundidad llegó el agua. Regar en profundidad estimula que las raíces crezcan hacia abajo, dando más estabilidad y autonomía — lo que después permitirá retirar los tutores.</p>
+
+        <p>El <strong>primer riego después de la plantación debe ser profundo</strong>: así eliminamos aire, asentamos tierra, podemos hacer correcciones y proveemos a la planta de lo necesario para adaptarse y enraizar. Luego el cliente debe comprometerse a mantener el equilibrio de las reservas hídricas, manteniendo el sustrato suficientemente húmedo.</p>
+
+        <div class="note-card note-card--field">
+          <p><strong>Práctica de obra:</strong> mientras estamos en obra, las plantas en tierra y las que aún estén en macetas se riegan <strong>al finalizar el día de trabajo</strong> — así evitamos la formación de barro que dificulta el trabajo. Pero si el día es muy caluroso y seco y las plantas lo requieren, se riega antes, evitando que lleguen al estrés hídrico y sufran deshidratación.</p>
+        </div>
+      </section>
+
+      <!-- LÁMINA 10 (Módulo VIII) -->
+      <section class="lamina" id="s59" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 10 / 11</span>
+          <h3>Esquemas de plantación</h3>
+        </div>
+
+        <p>Los esquemas de plantación deben estar especificados en el plano de plantación y detallados en un documento que lo acompañe.</p>
+
+        <figure class="plate">
+          <img src="img/mod8-esquemas-plantacion.jpg" alt="Cuatro esquemas de plantación: en cuadrado, en rectángulo, al tresbolillo con distancias de 3m y una disposición libre" loading="lazy">
+          <figcaption><span>Fig. 05</span> Esquemas de plantación: cuadrado, rectángulo, disposición libre y tresbolillo</figcaption>
+        </figure>
+
+        <div class="note-card">
+          <p>La <strong>plantación en tresbolillo</strong> ubica cada planta en el vértice de triángulos equiláteros —en el ejemplo, de 3m de lado— de modo que cada una queda en el centro del espacio que dejan las de la fila anterior. Aprovecha mejor la superficie que la plantación en cuadrado.</p>
+        </div>
+      </section>
+
+      <!-- LÁMINA 11 (Módulo VIII) -->
+      <section class="lamina" id="s60" data-section>
+        <div class="lamina__head">
+          <span class="lamina__tag">Lámina 11 / 11</span>
+          <h3>Entrega y mantenimiento</h3>
+        </div>
+
+        <p>Cuando terminamos el trabajo, retiramos todas las herramientas y el jardín está regado, podemos entregarlo. Si el día está avanzado conviene dejarlo para el día siguiente o dentro de dos o tres días — así de paso verificamos que siga todo en orden.</p>
+
+        <p>La entrega se hace <strong>recorriendo el jardín con el cliente</strong>, e idealmente deben estar presentes el diseñador (que sabe explicar los detalles artísticos y ornamentales) y el director de obra (responsable por los aspectos técnicos). Durante el recorrido:</p>
+
+        <ul class="checklist">
+          <li>Mostramos el paso del papel a la realidad y comentamos aspectos interesantes del diseño</li>
+          <li>Ayudamos a que identifique detalles, las distintas especies, los tutores y aspectos de seguridad</li>
+          <li>Señalamos los puntos de riego, drenaje e iluminación, para que compruebe que lo planeado fue ejecutado y valore el trabajo que pagó</li>
+          <li>Demostramos el riego automatizado en funcionamiento y cómo funciona el controlador; enseñamos dónde están las llaves de luz</li>
+          <li>Describimos cómo se desarrollará el jardín y qué esperar a corto, mediano y largo plazo</li>
+          <li>Si hubo iluminación, lo ideal es mostrarla <strong>de noche</strong>, para comprobar además que esté bien regulada</li>
+          <li>Indicamos el tipo de mantenimiento (podas, fertilizaciones) dejando las indicaciones <strong>por escrito</strong></li>
+        </ul>
+
+        <blockquote class="note-card">
+          <p>Es como la entrega de la llave de un cero kilómetro con su manual del usuario.</p>
+        </blockquote>
+
+        <p>Como parte de la entrega se coordina una <strong>visita de seguimiento a los 30 a 60 días</strong>. Sirve para verificar que las plantas estén enraizando bien, que el riego esté bien regulado y que los tutores sigan firmes, y permite coordinar algún trabajo necesario — como el rejunte de panes de césped con una cobertura de compost.</p>
+
+        <p>Después se puede ofrecer el servicio de <strong>mantenimiento periódico</strong>: semanal, quincenal, mensual o estacional, según las características del jardín, las tareas que el cliente desee hacer personalmente y su capacidad financiera.</p>
+
+        <div class="note-card note-card--field">
+          <p><strong>Cierre del curso:</strong> «Esperamos que este curso les haya servido y que les deje con ganas de seguir investigando y estudiando, y que además se vea reflejado en sus jardines. ¡Gracias por la atención!» — Elena Soboleff</p>
+        </div>
+      </section>
+
+      <footer class="content__footer">
+        <p>Resumen elaborado a partir de: Curso de Diseño de Jardines, Módulo VIII — Ejecución, Entrega y Mantenimiento (Educación a Distancia, Círculo Agrónomos de Buenos Aires — Docente: Elena Soboleff).</p>
+      </footer>
+
+      </div>
+      <!-- FIN módulo VIII -->
+
+    </main>
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>
