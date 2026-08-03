@@ -25,6 +25,20 @@
 
     <!-- SIDEBAR: sello / cajetín de plano técnico -->
     <aside class="sidebar" id="sidebar">
+      <div class="search">
+        <label for="searchInput" class="search__label">Buscar en la guía</label>
+        <input
+          type="search"
+          id="searchInput"
+          class="search__input"
+          placeholder="Ej.: caduca o perenne…"
+          autocomplete="off"
+          aria-describedby="searchEmpty"
+        >
+        <ul class="search__results" id="searchResults" hidden></ul>
+        <p class="search__empty" id="searchEmpty" hidden>Sin resultados</p>
+      </div>
+
       <div class="stamp">
         <p class="stamp__eyebrow">Educación a Distancia — Círculo Agrónomos de Bs. As.</p>
         <h1 class="stamp__title">Curso de<br>Diseño de<br>Jardines</h1>

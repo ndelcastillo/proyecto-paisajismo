@@ -9,6 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const indexLists = Array.from(document.querySelectorAll('.index__list'));
   const indexGroups = Array.from(document.querySelectorAll('[data-index-group]'));
   const activeModuleLabel = document.getElementById('activeModuleLabel');
+  const searchInput = document.getElementById('searchInput');
+  const searchResults = document.getElementById('searchResults');
+  const searchEmpty = document.getElementById('searchEmpty');
 
   const moduleNames = {
     '1': 'Módulo I',
@@ -20,6 +23,107 @@ document.addEventListener('DOMContentLoaded', () => {
     '7': 'Módulo VII',
     '8': 'Módulo VIII'
   };
+
+  const STOPWORDS = new Set(['o', 'y', 'de', 'la', 'el', 'en', 'del', 'los', 'las', 'un', 'una', 'al', 'con', 'para']);
+
+  function normalize(str) {
+    return str
+      .normalize('NFD')
+      .replace(/[̀-ͯ]/g, '')
+      .toLowerCase();
+  }
+
+  function queryWords(str) {
+    return normalize(str)
+      .split(/\s+/)
+      .filter(w => w.length > 0 && !STOPWORDS.has(w));
+  }
+
+  let searchIndex = [];
+
+  function buildSearchIndex() {
+    searchIndex = moduleContents.flatMap(content => {
+      const moduleId = content.dataset.moduleContent;
+      const sections = Array.from(content.querySelectorAll('[data-section]'));
+      return sections.map(sec => {
+        const titleEl = sec.querySelector('h3');
+        const title = titleEl ? titleEl.textContent.trim() : sec.id;
+        return {
+          id: sec.id,
+          moduleId: moduleId,
+          title: title,
+          text: normalize(sec.textContent)
+        };
+      });
+    });
+  }
+
+  function searchLaminas(query) {
+    const words = queryWords(query);
+    if (words.length === 0) return [];
+    return searchIndex.filter(entry => words.every(w => entry.text.includes(w)));
+  }
+
+  function clearActiveResult() {
+    Array.from(searchResults.children).forEach(li => li.classList.remove('is-active'));
+  }
+
+  function renderResults(matches) {
+    searchResults.innerHTML = '';
+
+    if (matches.length === 0) {
+      searchResults.hidden = true;
+      searchEmpty.hidden = false;
+      return;
+    }
+
+    searchEmpty.hidden = true;
+
+    matches.forEach(entry => {
+      const li = document.createElement('li');
+      li.className = 'search__result';
+
+      const a = document.createElement('a');
+      a.href = '#' + entry.id;
+      a.dataset.resultId = entry.id;
+      a.dataset.resultModule = entry.moduleId;
+
+      const modSpan = document.createElement('span');
+      modSpan.className = 'search__result-module';
+      modSpan.textContent = 'Mód. ' + entry.moduleId;
+
+      const titleSpan = document.createElement('span');
+      titleSpan.textContent = entry.title;
+
+      a.appendChild(modSpan);
+      a.appendChild(titleSpan);
+      li.appendChild(a);
+      searchResults.appendChild(li);
+    });
+
+    searchResults.hidden = false;
+  }
+
+  function goToLamina(id, moduleId) {
+    if (moduleId !== currentModule) {
+      activateModule(moduleId);
+    }
+
+    requestAnimationFrame(() => {
+      const targetEl = document.getElementById(id);
+      if (targetEl) targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    searchInput.value = '';
+    searchResults.hidden = true;
+    searchResults.innerHTML = '';
+    searchEmpty.hidden = true;
+
+    if (window.innerWidth <= 880) {
+      sidebar.classList.remove('is-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }
+  }
 
   let observer = null;
   let currentModule = '1';
@@ -126,6 +230,49 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   window.addEventListener('scroll', updateProgress, { passive: true });
+
+  searchInput.addEventListener('input', () => {
+    const matches = searchLaminas(searchInput.value);
+    renderResults(matches);
+  });
+
+  searchResults.addEventListener('click', (e) => {
+    const a = e.target.closest('a[data-result-id]');
+    if (!a) return;
+    e.preventDefault();
+    goToLamina(a.dataset.resultId, a.dataset.resultModule);
+  });
+
+  searchInput.addEventListener('keydown', (e) => {
+    const items = Array.from(searchResults.children);
+    if (items.length === 0) return;
+
+    const activeIndex = items.findIndex(li => li.classList.contains('is-active'));
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      const next = items[Math.min(activeIndex + 1, items.length - 1)];
+      clearActiveResult();
+      next.classList.add('is-active');
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      const prev = items[Math.max(activeIndex - 1, 0)];
+      clearActiveResult();
+      prev.classList.add('is-active');
+    } else if (e.key === 'Enter') {
+      e.preventDefault();
+      const target = activeIndex >= 0 ? items[activeIndex] : items[0];
+      const a = target.querySelector('a[data-result-id]');
+      if (a) goToLamina(a.dataset.resultId, a.dataset.resultModule);
+    } else if (e.key === 'Escape') {
+      searchInput.value = '';
+      searchResults.hidden = true;
+      searchResults.innerHTML = '';
+      searchEmpty.hidden = true;
+    }
+  });
+
+  buildSearchIndex();
 
   activateModule('1', { keepScroll: true });
 });
